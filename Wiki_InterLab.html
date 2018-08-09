@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+<html>
+
+<style>
+/**************************************************************************************************************************************************************************************************/
+
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif")
+
+
+/**************************************************************************************************************************************************************************************************/
+/* DEFAULT WIKI SETTINGS */
+/**************************************************************************************************************************************************************************************************/
+
+
+#home_logo, #sideMenu { display:none; }
+#sideMenu, #top_title, .patrollink  {display:none;}
+#content { margin-left:0px; margin-top:-7px; padding:0px; width:100%;}
+body {background-color:white; margin: 0px}
+#bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
+
+.judges-will-not-evaluate { border: 4px solid #e4dede; padding: 2%; width: 92%;}
+
+
+/**************************************************************************************************************************************************************************************************/
+/* MENU */
+/**************************************************************************************************************************************************************************************************/
+
+/*this wraps the whole of the menu*/
+.igem_2018_team_menu { 
+	background-color:#c4baba; 
+	border-left: 1px solid #c4baba;
+	display:block;
+	float:right; 
+	height:100vh; 
+	max-width: 270px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding:0px;
+	position:fixed; 
+	right:0%;
+	text-align:left;
+	width: 15%; 
+}
+
+
+.igem_2018_team_menu.displaying_menu{
+	display:block;	
+}
+
+.igem_2018_team_menu  a {
+	color: #484848;
+	text-decoration:none;
+}
+
+.igem_2018_team_menu img {
+	width:100%;
+}
+
+
+.igem_2018_team_menu .menu_item {
+	background-color: #c4baba;
+	border-bottom: 1px solid #928b8b;
+	clear: both;
+	color: #484848;
+	cursor: pointer;
+	float: left;
+	font-size: 120%;
+	font-weight: bold;
+	padding: 15px 0px 15px 5%;
+	width: 100%;
+}
+
+.igem_2018_team_menu .menu_item.direct_link {
+	color: #484848;
+	padding-left: 15%;
+}
+.igem_2018_team_menu .menu_item:hover {
+	background-color: #ecb656;
+}
+
+
+.igem_2018_team_menu .menu_item .submenu_control_icon {
+	color: #484848;
+	float: left;
+	width: 10%;
+}
+
+/* submenu icon "+"  "-"*/
+.igem_2018_team_menu .menu_item .submenu_control_icon::before {
+	content: "+"; 
+}
+
+/* submenu icon "+"  "-"*/
+.igem_2018_team_menu .menu_item .submenu_control_icon.open::before {
+	content: "-"; 
+}
+
+/*submenu wrapper*/
+.igem_2018_team_menu .submenu{
+	background-color: #e4dede;
+	clear:both;
+	display:none;
+	float: left;  		
+	width:100%;
+}
+
+/*styling for a submenu item*/
+.igem_2018_team_menu .submenu .submenu_item {
+	border-bottom: 1px solid #c4baba;
+	color: #635d5d;
+	height: 30px;
+	float: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 12px 0px 0px 15%;
+	width: 100%;
+}
+
+.igem_2018_team_menu .submenu .submenu_item:hover {
+	background-color: #f3bd5d;
+}
+
+
+.igem_2018_team_menu .submenu .submenu_item.current_page,
+.igem_2018_team_menu .menu_item.current_page, 
+.igem_2018_team_menu .menu_item.direct_link.current_page {	
+	background-color:#7acbd8;
+}
+
+
+
+/*mobile menu bar styling*/
+/**************************************************************************************************************************************************************************************************/
+
+
+.igem_2018_team_mobile_bar {
+	background-color:#e4dede; 
+	border-bottom: 1px solid #c4baba;
+	cursor:pointer;
+	display:none; 
+	float:left;
+	margin-top: 0;
+	padding: 5px 0;
+	position:fixed;
+	width:100%; 
+}
+
+.igem_logo_mobile img {
+	width:70px;
+}
+
+.igem_logo_mobile {
+	float:left; 
+	padding-left: 5%;
+	width: 30%; 
+}
+
+.igem_menu_control_mobile img {
+	width:25px;
+}
+
+.igem_menu_control_mobile {
+	float:right; 
+	padding-right:5%; 
+	padding-top:5px;
+	text-align:right; 
+	width: 30%; 
+}
+
+
+
+/**************************************************************************************************************************************************************************************************/
+/* CONTENT OF THE PAGE */
+/**************************************************************************************************************************************************************************************************/
+
+/* general wrapper for the content */
+.igem_2018_team_content {
+	background-color:white; 
+	display:block;
+	width: 87%;
+}
+
+/* subwrapper to center content */
+.igem_2018_team_content .igem_2018_team_column_wrapper {
+	margin:auto;
+	max-width: 1400px;
+	width:65%;
+}
+
+
+
+/*general styling*/
+/**************************************************************************************************************************************************************************************************/
+
+.igem_2018_team_content .igem_2018_team_column_wrapper h1 { font-size: 300%;}
+.igem_2018_team_content .igem_2018_team_column_wrapper h2 { font-size: 190%;}
+.igem_2018_team_content .igem_2018_team_column_wrapper h3 { font-size: 170%;}
+.igem_2018_team_content .igem_2018_team_column_wrapper h4 { font-size: 150%;}
+.igem_2018_team_content .igem_2018_team_column_wrapper h5 { font-size: 140%;}
+.igem_2018_team_content .igem_2018_team_column_wrapper h6 { font-size: 130%;}
+
+
+/* styling for the titles h1, h2*/
+.igem_2018_team_content .igem_2018_team_column_wrapper h1, .igem_2018_team_content .igem_2018_team_column_wrapper h2 {
+	border-bottom:0px; 
+	color: #00B013;
+	font-family: Raleway, "Noto Sans", Helvetica, "Arial Black", Gadget, sans-serif;
+}
+
+/* styling for the titles h3, h3, h5, h6 */
+.igem_2018_team_content .igem_2018_team_column_wrapper h3, 
+.igem_2018_team_content .igem_2018_team_column_wrapper h4, 
+.igem_2018_team_content .igem_2018_team_column_wrapper h5, 
+.igem_2018_team_content .igem_2018_team_column_wrapper h6 { 
+	border-bottom:0px; 
+	color: #10C008;  
+	font-family: Raleway;
+	padding: 5px 0px;
+	margin: 5px;
+}
+
+/* text */
+.igem_2018_team_content .igem_2018_team_column_wrapper p { 
+	font-size: 130%;
+	font-family: Asap Condensed, sans-serif;
+	padding: 5px 0px;
+	text-align: justify;
+	color: #484848;
+	margin: 5px; 
+}
+
+/* Links */
+.igem_2018_team_content .igem_2018_team_column_wrapper a {
+	color: #10C008;
+	font-weight: bold; 
+	text-decoration: underline;
+	text-decoration-color:#5bc7d8;
+	transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease; 
+	-ms-transition: all 0.4s ease; 
+	-o-transition: all 0.4s ease; 
+}
+
+/* hover for the links */
+.igem_2018_team_content .igem_2018_team_column_wrapper a:hover { 
+	color: #f8b732;
+	text-decoration:none;
+}
+
+
+/* Table */
+.igem_2018_team_content .igem_2018_team_column_wrapper table { 
+	border: 1px solid #928b8b; 
+	border-collapse: collapse; 
+	font-size: 100%;
+	width: 100%; 
+}
+
+/* table cells */
+.igem_2018_team_content .igem_2018_team_column_wrapper td { 
+	border: 1px solid #c4baba; 
+	border-collapse: collapse; 
+	font-size: 105%;
+	padding: 10px;
+	vertical-align: text-top; 
+	font-family: Asap Condensed;
+}
+
+/* table headers */
+.igem_2018_team_content .igem_2018_team_column_wrapper th { 
+	background-color:#c4baba; 
+	border: 1px solid #928b8b; 
+	border-collapse: collapse; 
+	font-size: 110%;
+	padding: 10px; 
+	vertical-align: text-top; 
+	font-family: Asap Condensed;
+}
+
+
+
+/* non numbered lists */
+.igem_2018_team_content .igem_2018_team_column_wrapper ul, .igem_2018_team_content .igem_2018_team_column_wrapper ol {
+	font-size: 130%;
+	font-family: Arial, Helvetica, sans-serif;
+	padding:0px 20px;
+}
+
+
+.igem_2018_team_content .igem_2018_team_column_wrapper ul ul li, .igem_2018_team_content .igem_2018_team_column_wrapper ul ul ul li, 
+.igem_2018_team_content .igem_2018_team_column_wrapper ul ol li, .igem_2018_team_content .igem_2018_team_column_wrapper ul ul ol li, 
+.igem_2018_team_content .igem_2018_team_column_wrapper ol ol li, .igem_2018_team_content .igem_2018_team_column_wrapper ul ol ul li, 
+.igem_2018_team_content .igem_2018_team_column_wrapper ol ul li, .igem_2018_team_content .igem_2018_team_column_wrapper ul ol ol li, 
+.igem_2018_team_content .igem_2018_team_column_wrapper ol ul ul li, .igem_2018_team_content .igem_2018_team_column_wrapper ol ol ul li, 
+.igem_2018_team_content .igem_2018_team_column_wrapper ol ol ol li, .igem_2018_team_content .igem_2018_team_column_wrapper ol ul ol li{ font-size: 76%; }
+
+
+
+/*layout classes*/
+/**************************************************************************************************************************************************************************************************/
+
+/*main layout class */
+.igem_2018_team_content .igem_2018_team_column_wrapper .column  { 
+	float:left;
+	margin: 1% 2%;
+	padding: 0px;
+}
+
+/* 100% */
+.igem_2018_team_content .igem_2018_team_column_wrapper .column.full_size { width:96%; }
+
+/* 66% */
+.igem_2018_team_content .igem_2018_team_column_wrapper .column.two_thirds_size { width: 62.6%; }
+
+/* 50% */
+.igem_2018_team_content .igem_2018_team_column_wrapper .column.half_size { width: 45%; }
+
+/* 33% */
+.igem_2018_team_content .igem_2018_team_column_wrapper .column.third_size { width: 29.3%; }
+
+
+
+
+/*styling for all images*/
+.igem_2018_team_content .igem_2018_team_column_wrapper .column.full_size img, 
+.igem_2018_team_content .igem_2018_team_column_wrapper .column.two_thirds_size img,
+.igem_2018_team_content .igem_2018_team_column_warpper .column.half_size img,
+.igem_2018_team_content .igem_2018_team_column_wrapper .column.third_size img {
+	margin-bottom: 15px;
+	width: 100%; 
+}
+
+
+/* page break */
+.igem_2018_team_content .igem_2018_team_column_wrapper .clear {
+	clear:both;
+}
+/*add extra space to page break with clear class*/
+.igem_2018_team_content .igem_2018_team_column_wrapper .clear.extra_space {
+	height: 30px;
+}
+
+/* horizontal line to divide the page*/
+.igem_2018_team_content .igem_2018_team_column_wrapper .line_divider {
+	border-top: 1px solid #c4baba;
+	margin: auto;
+	width: 98%;
+}
+
+
+
+
+/*support classes*/
+/**************************************************************************************************************************************************************************************************/
+
+
+/*Button  */
+/************************************************/
+.igem_2018_team_content .igem_2018_team_column_wrapper .button_link {
+	font-size: 130%;
+	margin: 30px auto;
+	text-align: center;
+}
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .button_link a  {
+	background-color: #5bc7d8;
+	color: #635d5d;
+	font-weight: bold;
+	margin: auto;
+	text-decoration: none;
+	padding: 10px 15px;
+}
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .button_link a:hover {
+	background-color: #f8b732;   
+}
+
+
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight { 
+	padding: 15px 20px;
+}
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight p, 
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight h1, 
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight h2,
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight h3,
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight h4,
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight h5,
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight h6 {
+	padding: 5px 15px;
+}
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight.decoration_background {
+	background-color: #e4dede; 
+}
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight.decoration_A_top {
+	border-top: 4px solid #5bc7d8;
+}
+
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight.decoration_A_full {
+	border: 4px solid #5bc7d8;
+}
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight.decoration_B_top {
+	border-top: 4px solid #f8b732
+}
+
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight.decoration_B_full {
+	border: 4px solid #f8b732;
+}
+
+
+
+
+/*mobile*/
+/**************************************************************************************************************************************************************************************************/
+
+
+/* 1800px  */
+/************************************************/
+@media only screen and (max-width: 1800px) {
+	.igem_2018_team_content { width: 100%;}
+	.igem_2018_team_menu {display:block;}	
+}
+
+/* 1400px  */
+/************************************************/
+@media only screen and (max-width: 1400px) {
+	.igem_2018_team_menu .menu_item { font-size:100%;}
+	.igem_2018_team_menu .submenu .submenu_item { font-size:90%;}
+	.igem_2018_team_menu {display:block;}
+}
+
+@media only screen and (max-width: 1001px) {
+	.igem_2018_team_menu {display:block;}
+}
+
+/* 1000px  */
+/************************************************/
+@media only screen and (max-width: 1000px) {
+	.igem_2018_team_content {width:100%; margin-left:0px;}
+	.igem_2018_team_menu {display:none; margin-top: 45px; min-width:50%; width:50%;}
+	.igem_2018_team_mobile_bar {display:block;}
+	.igem_2018_team_content .igem_2018_team_column_wrapper .column.full_size, .igem_2018_team_content .igem_2018_team_column_wrapper .column.two_thirds_size,.igem_2018_team_content .igem_2018_team_column_wrapper .column.third_size {width:96%; }
+
+}
+
+
+@media only screen and (max-width: 500px) {
+	.igem_2018_team_menu {min-width:100%; width:100%; }
+}
+
+
+/**************************************************************************************************************************************************************************************************/
+
+
+
+/* NAVIGATION BAR */
+#primary_nav_wrap
+{
+	margin-top:0px;
+	overflow-x: visible;
+	/*position: relative;*/
+	/*overflow: hidden;*/
+	background-color: #333;
+	position: fixed;
+	height: 32px;
+	width: 100%;
+	min-width: 1000px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 3px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)
+}
+#primary_nav_wrap ul
+{
+	list-style:none;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0 0 0 20%;
+}
+#primary_nav_wrap ul a
+{
+	display:block;
+	position:relative;
+	color: white;/*#333;*/
+	text-decoration:none;
+	font-weight:700;
+	font-size:15px;
+	line-height:32px;
+	padding:0 15px;
+	z-index: 2000;
+}
+#primary_nav_wrap ul li
+{
+	z-index: 2000;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+	font-family: Helvetica;
+}
+#primary_nav_wrap ul li.current-menu-item
+{
+	background:red;
+}
+#primary_nav_wrap ul li:hover
+{
+	background-color:rgba(160, 192, 239, 0.25);
+	transition: all .1s ease-out;
+	cursor: pointer
+}
+#primary_nav_wrap ul ul
+{
+	position:absolute;
+	top:100%;
+	left:0;
+	background-color:rgba(15, 19, 25, 0.7);
+	padding:0;
+	transition: all .2s ease-out;
+	opacity: 0; /* for anim display:none; -> display:block; */
+	visibility: hidden;
+	margin: -20px 0 0 0; 
+}
+#primary_nav_wrap ul ul li
+{
+	line-height:120%;
+	padding:10px 15px;
+	color: rgba(255,255,255,0.5);
+}
+#primary_nav_wrap ul ul a
+{
+	line-height:120%;
+	padding:10px 15px;
+}
+#primary_nav_wrap ul li:hover > ul
+{
+	opacity: 1;
+	visibility: visible;
+	margin: 0;
+
+}
+
+</style>
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- THIS IS WHERE THE HTML BEGINS --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<head> 
+
+	<!-- This tells the browser that your page is responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+</head>
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Menu --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Content of the page  --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<style>
+.portrait_photo {
+	border-radius: 10px
+}
+</style>
+
+<div class="navbar-fixed">
+<nav class="row blue">
+	<div id="primary_nav_wrap" style="z-index: 2000">
+		<ul>
+			<li class="mobicon"> <a href="javascript:void(0);" onclick="mobnavtoggle()">≡ Menu</a></li>
+			<li><a href="http://2018.igem.org/Team:Groningen">Home</a></li>
+			<li><a onclick="">Team</a>
+				<ul>
+					<li class="dir"><a href="http://2018.igem.org/Team:Groningen/Team">Team Members</a></li>
+					<li class="dir"><a href="">Collaborations</a></li>
+				</ul>
+			</li>
+			<li><a onclick="">Project</a>
+				<ul>					
+					<li><a href="http://2018.igem.org/Team:Groningen/InterLab">InterLab</a></li>
+					<li class="dir">Description</li>
+					<li class="dir">Design</li>
+					<li class="dir">Experiments</li>
+					<li class="dir">Notebook</li>
+					<li class="dir">Model</li>
+					<li class="dir">Results</li>
+					<li class="dir">Demonstrate</li>
+					<li class="dir">Improve</li>
+					<li class="dir">Attributions</li>
+				</ul>
+			</li>
+			<li><a onclick="">Human Practices</a>
+				<ul>
+					<li class="dir">Human Practices</li>
+					<li class="dir">Education & Engagement</li>
+				</ul>
+			</li>
+			<li><a onclick="">Parts</a>
+				<ul>
+					<li class="dir">Parts Overview</li>
+					<li class="dir">Basic Parts</li>
+					<li class="dir">Composite Parts</li>
+					<li class="dir">Part Collection</li>
+				</ul>
+			</li>
+			<li><a onclick="">Awards</a>
+				<ul>
+					<li class="dir">Applied Design</li>
+					<li class="dir">Entrepeneurship</li>
+					<li class="dir">Hardware</li>
+					<li class="dir">Measurement</li>
+					<li class="dir">Model</li>
+					<li class="dir">Plant</li>
+					<li class="dir">Software</li>
+				</ul>
+			</li>
+			<li><a>Sponsors</a></li>
+		</ul>
+	</div>
+</nav>
+<div>
+
+<!------------- toggle mobile menu ----------->
+<script>
+	function mobnavtoggle() {
+		document.getElementByID("primary_nav_wrap").classList.toggle("mobnav");
+	}
+</script>
+
+<style>
+.mobicon {display:none;}
+</style>
+
+<div box-shadow="0 0 px 8px #10722B inset" visibility="hidden">
+	<img src="http://2018.igem.org/wiki/images/5/5c/T--Groningen--WikiBackgroundImage.png" width="100%" height="auto">
+</div>
+<div style="position:relative; height: 15px; ; z-index: 5; box-shadow: 0px 0px 8px 1px black; background-color: white"></div>
+
+<div class="igem_2018_team_content" style="background-color: white">
+	<div class="igem_2018_team_column_wrapper">
+		<div class="clear extra_space"></div>
+		<div class="column" style="width: 100%;" align="center">
+
+			
+			<h1>InterLab Study</h1>
+			<p> Our team participated in one of the biggest interlaboratory studies within the field of synthetic biology: the 5th international iGEM Interlab Study. Repeatable measurements between labs are needed in research but are often difficult. This Interlab study aims to establish comparable measurements between different laboratories for the iGEM community and the field of synthetic biology in general. </p> 
+			<p> The study focuses on the measurement of fluorescence, since green fluorescent protein (GFP) is one of the most used markers in synthetic biology and most laboratories are therefore equipped to measure its fluorescence. Fluorescence data can usually not be compared because it is reported in arbitrary units or different groups process data in different ways. If we can enable direct comparison of the data, this would make debugging of engineered biological constructs more efficient, as well as sharing of constructs between labs and interpretation of experimental controls. </p>
+</div>
+	<div class="column">
+			<h4> Research question </h4>
+			<p> In previous years, it has already been demonstrated that GFP expression between labs can be calibrated against a known concentration of a fluorescent molecule, which greatly reduces the variability between labs. However, with bulk measurements of cells, such as in a plate reader, there is still a large source of variability in the measurements: the number of GFP producing cells in the sample. Because the fluorescence measured by such a plate reader is a sum of the fluorescence of all the cells in a sample, we can divide the fluorescence by the number of cells to determine the mean expression of GFP per cell. Usually, the number of cells in a sample is estimated by measurement of absorbance of light at 600 nm, which results in an optical density (OD) value. These measurements are however subject to high variability between labs. It is moreover unclear to what extent this approximation approaches the actual number of cells. If we used a more direct method to determine the cell count in each sample, we could potentially remove another source of variability in our measurements.  </p>
+		</div>
+	<div class="column">
+			<h4> Aim </h4>
+			<p> Therefore, iGEM teams from all over the world will measure both absorbance (OD600) and fluorescence in a plate reader, of GFP-producing strains of Escherichia coli DH5α. All teams that contribute to this research follow the same detailed <a href="http://2018.igem.org/wiki/images/0/09/2018_InterLab_Plate_Reader_Protocol.pdf">protocol</a> In this manner, all the different iGEM teams will obtain absolute units for GFP measurement in their plate readers, after which their data can be compared and most likely key errors causing differences can be identified. We tested <a href="http://parts.igem.org/Help:2017_Competent_Cell_Test_Kit ">competence</a> and subsequently <a href="http://parts.igem.org/Help:Protocols/Transformation ">transformed</a> different plasmids, containing a gene for GFP production, behind promotors with different strengths, resulting in different levels of GFP production. The following plasmids, obtained from the IGEM 2018 distribution kit, were used: </p>
+			
+			<table style="font-family: Asap Condensed; font-size: 15px">
+				<style>
+				table {
+					font-family: Asap Condensed;
+					border-collapse:collapse;
+					width: 80%
+				}
+				td, th {
+					border: 1px solid #75E882;
+					text-align: left;
+					padding: 8px;
+				}
+				tr:nth-child(even) {
+					background-color: #95F2A0;
+				}
+
+			</style>
+			<tr>
+				<th>Device</th>
+				<th>Plasmid</th>
+				<th>Promotor</th>
+  <tr>
+    <td>Negative Control</td>
+    <td> <a href="http://parts.igem.org/Part:BBa_R0040">BBa_R0040</a></td> 
+    <td>TetR repressible promotor</td>
+  </tr>
+  <tr>
+    <td>Positve control</td>
+    <td><a href="http://parts.igem.org/Part:BBa_I20270">BBa_I20270</a></td>
+    <td>J23151 promotor</td>
+  </tr>
+  <tr>
+    <td>Test Device 1</td>
+    <td><a href="http://parts.igem.org/Part:BBa_J364000">BBa_J364000</a></td>
+    <td>J23101 promotor</td>
+  </tr>
+  <tr>
+    <td>Test Device 2</td>
+    <td><a href="http://parts.igem.org/Part:BBa_J364001">BBa_J364001</a></td>
+    <td>J23106 promotor</td>
+  </tr>
+  <tr>
+    <td>Test Device 3</td>
+    <td><a href="http://parts.igem.org/Part:BBa_J364002">BBa_J364002</a></td>
+    <td>J23117 promotor</td>
+  </tr>
+  <tr>
+    <td>Test Device 4</td>
+    <td><a href="http://parts.igem.org/Part:BBa_J364007">BBa_J364007</a></td>
+    <td>J23100 promotor</td>
+  </tr>
+  <tr>
+    <td>Test Device 5</td>
+    <td><a href="http://parts.igem.org/Part:BBa_J364008">BBa_J364008</a></td>
+    <td>J23104 promotor</td>
+  </tr>
+  <tr>
+    <td>Test Device 6</td>
+    <td><a href="http://parts.igem.org/Part:BBa_J364009">BBa_J364009</a></td>
+    <td>J23116 promotor</td>
+  </tr>
+</table>
+<p>The plate reader (Tecan Spark 10M) settings were carefully adjusted to the exact same values for each experiment and factors that may affect measurements such as fingerprints on the plates were avoided. Emission and excitation were 530 nm and 485 nm, respectively, with a 20 nm bandpass width. Measurements were performed using top optics. </p>
+		</div>
+	<div class="column">
+			<h4> Experiments </h4>
+			<p> We perform three calibration experiments to be able to convert our cell measurements to more absolute units. 	Subsequently, we grow our cells for 6 hours and measure OD600 and fluorescence at both 0 and 6 hours. We use the calibration data to obtain units which we can compare with other laboratories.   </p>
+			<p> For the first calibration, we measure the absorbance of a LUDOX solution with a known concentration, to compare OD600 in our plate reader to values in a spectrophotometer. In a plate reader, the path length of light depends on the volume of the sample because light goes through the plate vertically. Instead, in a spectrophotometer, light passes through horizontally, which fixes the path length to the width of the cuvette. </p>
+			<p> We furthermore measure the absorbance of silica bead particles that resemble E. coli cells in size and shape and should therefore scatter light in a similar way as our bacterial cells. With a known concentration of silica bead suspension, we can convert absorbances measured in the plate reader to a standardized beads equivalent, thus number of cells. Another approach to determine the number of cells in a sample, is to obtain a specific OD600 in the plate reader and subsequently plate these samples on selective agar plates. We counted colony forming units (CFU) and, assuming one bacterial cell gives rise to one colony forming unit, calculated how many cells were present in the starting sample at the OD600 given by the plate reader. These two experiments will give more insight into accuracy of the OD600 measurements by plate readers and whether they can  be standardized between labs to compare mean fluorescence per cell values. </p>
+			<p> Finally, we perform a dilution series of a fluorescent molecule (fluorescein) solution with a known concentration, to be able to convert our GFP fluorescence measurements to an equivalent fluorescein concentration.</p>
+		</div>
+	<div class="column">
+			<h4> Results </h4>
+			<p> All the plasmids were successfully transformed in our highly competent cells at the first attempt. Most devices showed highly increased growth at 6 hours compared to 0 hours, except for device 1, which did not have a high growth rate. Regarding the expression of GFP and measurement of fluorescence, most fluorescence was observed in device 4. As expected, the positive control showed brighter fluorescence than the negative control. Only device 3 did not show a high levels of fluorescence. 	  </p>
+			<p> The calibration experiments provided us with the following conversion factors:</p>
+
+			<style>
+				.table {
+					font-family: Asap Condensed;
+					border-collapse:collapse;
+					width: 80%
+				}
+				 th{
+				 	background-color: #95F2A0;
+				 	color: #00B013;
+				 }
+				td, th {
+					border: 1px solid #75E882;
+					font-family: Asap Condensed;
+					font-size: 5px;
+					text-align: left;
+					padding: 4px;
+				}
+				tr:nth-child(even) {
+					background-color: #95F2A0;
+				}
+			</style>
+			<table style="font-family: Asap Condensed; font-size: 15px">
+				<tr> 
+					<th>Calibration</th>
+					<th>Value</th>
+					<th>Conversion</th>
+				</tr>
+				<tr>
+					<td>LUDOX</td>
+					<td>3,39</td>
+					<td>Absorbance value measured in a plate reader to the OD600 measured in a reference spectrophotometer</td>
+				</tr>
+				<tr>
+					<td>Silica</td>
+					<td>2,29&times;10<sup>8</sup></td>
+					<td>Absorbance value in a plate reader to a number of equivalent silica bead particles </td>
+				</tr>
+				<tr>
+					<td>Fluorescein</td>
+					<td>1,65&times;10<sup>-4</sup></td>
+					<td>Arbitrary fluorescence values of the plate reader to an equivalent fluorescein concentration</td>
+				</tr>
+				<tr>
+					<td>Fluorescein</td>
+					<td>9,92&times;10<sup>8</sup></td>
+					<td>Arbitrary fluorescence values of the plate reader to Molecules of Equivalent Fluorescein (MEFL)</td>
+				</tr>
+			</table>
+
+			<p> With these conversion factors, we can plot uM fluorescein/OD600 and MEFL/particle, to obtain absolute units of fluorescence per cell which we can compare to the other iGEM teams. </p>
+		
+		<img class="figure" src="http://2018.igem.org/wiki/images/f/fb/T--Groningen--InterLab-fig1.jpeg" style="width:50%"><img class="img" src="http://2018.igem.org/wiki/images/7/73/T--Groningen--InterLab-fig2.jpeg" style="width: 50%">
+			<div class="column half_size"><i>Figure 1. We produced a particle standard curve to enable conversion of OD<sub>600</sub> by the plate reader to a number of cells.</i></div>
+			<div class="column half_size"><i>Figure 2. We produced a fluorescein standard curve to enable conversion of fluorescence measured by the plate reader to an equivalent fluorescein concentration. </i></div>
+			
+			<h4> Outlook </h4>
+			<p> In the raw fluorescence measurements, device 4 had the highest brightness and device 1 had the lowest growth rate of all devices. However, when the raw data is corrected to fluorescence per OD600 or per particle, device 1 has a much higher level of fluorescence per cell than device 4. We are curious to see what the results of the other teams are and whether such an approach can reduce the interlaboratory differences in fluorescence measurements.</p>
+			
+		</div>
+		<img src="http://2018.igem.org/wiki/images/e/e1/T--Groningen--InterLab-fig3.jpeg" style="width:50%"><img src="http://2018.igem.org/wiki/images/0/00/T--Groningen--InterLab-fig4.jpeg" style="width:50%">
+			<div class="column half_size"><i>Figure 3. Fluorescence (raw values) of the different cell strains used in this study for time points 0 and 6 hours.</i></div>
+			<div class="column half_size"><i>Figure 4. OD<sub>600</sub> (raw values of absorbance at 600 nm) of the different cell strains used in this study for time points 0 and 6 hours.</i></div>
+		
+			<div>
+			<img src="http://2018.igem.org/wiki/images/6/69/T--Groningen--InterLab-fig5.jpeg" style="width: 50%"><img src="http://2018.igem.org/wiki/images/0/01/T--Groningen--InterLab-fig6.jpeg" style="width: 50%">
+			<div class="column half_size"><i>Figure 5. Fluorescence per OD<sub>600</sub> of the different cell strains used in this study for time points 0 and 6 hours. </i></div>
+			<div class="column half_size"><i>Figure 6. MEFL/particle of the different cell strains used in this study for time points 0 and 6 hours.</i></div>
+		</div>
+
+</html>
