@@ -1,0 +1,836 @@
+<!-- Todo: Ad supervisors-->
+
+<html>
+
+<script>
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	$(document).ready(function() {
+
+		$("#HQ_page").attr('id','');
+		
+
+		//highlight current page on the menu
+		highlight_current_page_menu();
+			
+		//accessing submenus
+		$(".menu_item").click(function(){
+			$(".submenu_control_icon", this).toggleClass("open");
+			$(this).next(".submenu").fadeToggle(400);
+		});
+		
+		//mobile menu access 
+		$(".igem_2018_team_mobile_bar").click(function(){
+			$(this).next().toggleClass("displaying_menu");
+		});
+		
+	});
+
+
+		function highlight_current_page_menu() {
+			
+			var page_url="http://2018.igem.org/";
+			page_url = page_url + wgPageName;
+			$("a[href$='"+ page_url +"']").children().addClass("current_page");
+			
+			//if the page is in a submenu, open the submenu and make the appropiate changes
+			if( $( ".current_page" ).hasClass( "submenu_item" )){
+				
+				$(".current_page").parent().parent().fadeToggle(400);
+				$(".current_page").parent().parent().prev().addClass("current_page");
+				$(".menu_item.current_page > .submenu_control_icon").toggleClass("open");
+				
+			}
+		}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+</script>
+
+<style>
+/**************************************************************************************************************************************************************************************************/
+
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif")
+
+
+/**************************************************************************************************************************************************************************************************/
+/* DEFAULT WIKI SETTINGS */
+/**************************************************************************************************************************************************************************************************/
+
+
+#home_logo, #sideMenu { display:none; }
+#sideMenu, #top_title, .patrollink  {display:none;}
+#content { margin-left:0px; margin-top:-7px; padding:0px; width:100%;}
+body {background-color:white; margin: 0px}
+#bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
+
+.judges-will-not-evaluate { border: 4px solid #e4dede; padding: 2%; width: 92%;}
+
+
+/**************************************************************************************************************************************************************************************************/
+/* MENU */
+/**************************************************************************************************************************************************************************************************/
+
+/*this wraps the whole of the menu*/
+.igem_2018_team_menu { 
+	background-color:#c4baba; 
+	border-left: 1px solid #c4baba;
+	display:block;
+	float:right; 
+	height:100vh; 
+	max-width: 270px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding:0px;
+	position:fixed; 
+	right:0%;
+	text-align:left;
+	width: 15%; 
+}
+
+
+.igem_2018_team_menu.displaying_menu{
+	display:block;	
+}
+
+.igem_2018_team_menu  a {
+	color: #484848;
+	text-decoration:none;
+}
+
+.igem_2018_team_menu img {
+	width:100%;
+}
+
+
+.igem_2018_team_menu .menu_item {
+	background-color: #c4baba;
+	border-bottom: 1px solid #928b8b;
+	clear: both;
+	color: #484848;
+	cursor: pointer;
+	float: left;
+	font-size: 120%;
+	font-weight: bold;
+	padding: 15px 0px 15px 5%;
+	width: 100%;
+}
+
+.igem_2018_team_menu .menu_item.direct_link {
+	color: #484848;
+	padding-left: 15%;
+}
+.igem_2018_team_menu .menu_item:hover {
+	background-color: #ecb656;
+}
+
+
+.igem_2018_team_menu .menu_item .submenu_control_icon {
+	color: #484848;
+	float: left;
+	width: 10%;
+}
+
+/* submenu icon "+"  "-"*/
+.igem_2018_team_menu .menu_item .submenu_control_icon::before {
+	content: "+"; 
+}
+
+/* submenu icon "+"  "-"*/
+.igem_2018_team_menu .menu_item .submenu_control_icon.open::before {
+	content: "-"; 
+}
+
+/*submenu wrapper*/
+.igem_2018_team_menu .submenu{
+	background-color: #e4dede;
+	clear:both;
+	display:none;
+	float: left;  		
+	width:100%;
+}
+
+/*styling for a submenu item*/
+.igem_2018_team_menu .submenu .submenu_item {
+	border-bottom: 1px solid #c4baba;
+	color: #635d5d;
+	height: 30px;
+	float: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 12px 0px 0px 15%;
+	width: 100%;
+}
+
+.igem_2018_team_menu .submenu .submenu_item:hover {
+	background-color: #f3bd5d;
+}
+
+
+.igem_2018_team_menu .submenu .submenu_item.current_page,
+.igem_2018_team_menu .menu_item.current_page, 
+.igem_2018_team_menu .menu_item.direct_link.current_page {	
+	background-color:#7acbd8;
+}
+
+
+
+/*mobile menu bar styling*/
+/**************************************************************************************************************************************************************************************************/
+
+
+.igem_2018_team_mobile_bar {
+	background-color:#e4dede; 
+	border-bottom: 1px solid #c4baba;
+	cursor:pointer;
+	display:none; 
+	float:left;
+	margin-top: 0;
+	padding: 5px 0;
+	position:fixed;
+	width:100%; 
+}
+
+.igem_logo_mobile img {
+	width:70px;
+}
+
+.igem_logo_mobile {
+	float:left; 
+	padding-left: 5%;
+	width: 30%; 
+}
+
+.igem_menu_control_mobile img {
+	width:25px;
+}
+
+.igem_menu_control_mobile {
+	float:right; 
+	padding-right:5%; 
+	padding-top:5px;
+	text-align:right; 
+	width: 30%; 
+}
+
+
+
+/**************************************************************************************************************************************************************************************************/
+/* CONTENT OF THE PAGE */
+/**************************************************************************************************************************************************************************************************/
+
+/* general wrapper for the content */
+.igem_2018_team_content {
+	background-color:white; 
+	display:block;
+	width: 87%;
+}
+
+/* subwrapper to center content */
+.igem_2018_team_content .igem_2018_team_column_wrapper {
+	margin:auto;
+	max-width: 1400px;
+	width:65%;
+}
+
+
+
+/*general styling*/
+/**************************************************************************************************************************************************************************************************/
+
+.igem_2018_team_content .igem_2018_team_column_wrapper h1 { font-size: 300%;}
+.igem_2018_team_content .igem_2018_team_column_wrapper h2 { font-size: 190%;}
+.igem_2018_team_content .igem_2018_team_column_wrapper h3 { font-size: 170%;}
+.igem_2018_team_content .igem_2018_team_column_wrapper h4 { font-size: 150%;}
+.igem_2018_team_content .igem_2018_team_column_wrapper h5 { font-size: 140%;}
+.igem_2018_team_content .igem_2018_team_column_wrapper h6 { font-size: 130%;}
+
+
+/* styling for the titles h1, h2*/
+.igem_2018_team_content .igem_2018_team_column_wrapper h1, .igem_2018_team_content .igem_2018_team_column_wrapper h2 {
+	border-bottom:0px; 
+	color: #6cab1e;
+	font-family: Raleway, "Noto Sans", Helvetica, "Arial Black", Gadget, sans-serif;
+}
+
+/* styling for the titles h3, h3, h5, h6 */
+.igem_2018_team_content .igem_2018_team_column_wrapper h3, 
+.igem_2018_team_content .igem_2018_team_column_wrapper h4, 
+.igem_2018_team_content .igem_2018_team_column_wrapper h5, 
+.igem_2018_team_content .igem_2018_team_column_wrapper h6 { 
+	border-bottom:0px; 
+	color: #83CF38;  
+	font-family: Raleway, "Noto Sans", Helvetica, "Arial Black", Gadget, sans-serif;
+	padding: 5px 0px;
+}
+
+/* text */
+.igem_2018_team_content .igem_2018_team_column_wrapper p { 
+	font-size: 130%;
+	font-family: Raleway, "Noto Sans", Helvetica, "Arial Black", Gadget, sans-serif;
+	padding: 5px 0px;
+	text-align: justify;
+	color: #484848;
+}
+
+/* Links */
+.igem_2018_team_content .igem_2018_team_column_wrapper a {
+	color: #5bc7d8;
+	font-weight: bold; 
+	text-decoration: underline;
+	text-decoration-color:#5bc7d8;
+	transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease; 
+	-ms-transition: all 0.4s ease; 
+	-o-transition: all 0.4s ease; 
+}
+
+/* hover for the links */
+.igem_2018_team_content .igem_2018_team_column_wrapper a:hover { 
+	color: #f8b732;
+	text-decoration:none;
+}
+
+
+/* Table */
+.igem_2018_team_content .igem_2018_team_column_wrapper table { 
+	border: 1px solid #928b8b; 
+	border-collapse: collapse; 
+	font-size: 130%;
+	width: 100%; 
+}
+
+/* table cells */
+.igem_2018_team_content .igem_2018_team_column_wrapper td { 
+	border: 1px solid #c4baba; 
+	border-collapse: collapse; 
+	font-size: 105%;
+	padding: 10px;
+	vertical-align: text-top; 
+}
+
+/* table headers */
+.igem_2018_team_content .igem_2018_team_column_wrapper th { 
+	background-color:#c4baba; 
+	border: 1px solid #928b8b; 
+	border-collapse: collapse; 
+	font-size: 110%;
+	padding: 10px; 
+	vertical-align: text-top; 
+}
+
+
+
+/* non numbered lists */
+.igem_2018_team_content .igem_2018_team_column_wrapper ul, .igem_2018_team_content .igem_2018_team_column_wrapper ol {
+	font-size: 130%;
+	font-family: Arial, Helvetica, sans-serif;
+	padding:0px 20px;
+}
+
+
+.igem_2018_team_content .igem_2018_team_column_wrapper ul ul li, .igem_2018_team_content .igem_2018_team_column_wrapper ul ul ul li, 
+.igem_2018_team_content .igem_2018_team_column_wrapper ul ol li, .igem_2018_team_content .igem_2018_team_column_wrapper ul ul ol li, 
+.igem_2018_team_content .igem_2018_team_column_wrapper ol ol li, .igem_2018_team_content .igem_2018_team_column_wrapper ul ol ul li, 
+.igem_2018_team_content .igem_2018_team_column_wrapper ol ul li, .igem_2018_team_content .igem_2018_team_column_wrapper ul ol ol li, 
+.igem_2018_team_content .igem_2018_team_column_wrapper ol ul ul li, .igem_2018_team_content .igem_2018_team_column_wrapper ol ol ul li, 
+.igem_2018_team_content .igem_2018_team_column_wrapper ol ol ol li, .igem_2018_team_content .igem_2018_team_column_wrapper ol ul ol li{ font-size: 76%; }
+
+
+
+/*layout classes*/
+/**************************************************************************************************************************************************************************************************/
+
+/*main layout class */
+.igem_2018_team_content .igem_2018_team_column_wrapper .column  { 
+	float:left;
+	margin: 1% 2%;
+	padding: 0px;
+}
+
+/* 100% */
+.igem_2018_team_content .igem_2018_team_column_wrapper .column.full_size { width:96%; }
+
+/* 66% */
+.igem_2018_team_content .igem_2018_team_column_wrapper .column.two_thirds_size { width: 62.6%; }
+
+/* 33% */
+.igem_2018_team_content .igem_2018_team_column_wrapper .column.third_size { width: 29.3%; }
+
+
+
+
+/*styling for all images*/
+.igem_2018_team_content .igem_2018_team_column_wrapper .column.full_size img, 
+.igem_2018_team_content .igem_2018_team_column_wrapper .column.two_thirds_size img,
+.igem_2018_team_content .igem_2018_team_column_wrapper .column.third_size img {
+	margin-bottom: 15px;
+	width: 100%; 
+}
+
+
+/* page break */
+.igem_2018_team_content .igem_2018_team_column_wrapper .clear {
+	clear:both;
+}
+/*add extra space to page break with clear class*/
+.igem_2018_team_content .igem_2018_team_column_wrapper .clear.extra_space {
+	height: 30px;
+}
+
+/* horizontal line to divide the page*/
+.igem_2018_team_content .igem_2018_team_column_wrapper .line_divider {
+	border-top: 1px solid #c4baba;
+	margin: auto;
+	width: 98%;
+}
+
+
+
+
+/*support classes*/
+/**************************************************************************************************************************************************************************************************/
+
+
+/*Button  */
+/************************************************/
+.igem_2018_team_content .igem_2018_team_column_wrapper .button_link {
+	font-size: 130%;
+	margin: 30px auto;
+	text-align: center;
+}
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .button_link a  {
+	background-color: #5bc7d8;
+	color: #635d5d;
+	font-weight: bold;
+	margin: auto;
+	text-decoration: none;
+	padding: 10px 15px;
+}
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .button_link a:hover {
+	background-color: #f8b732;   
+}
+
+
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight { 
+	padding: 15px 20px;
+}
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight p, 
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight h1, 
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight h2,
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight h3,
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight h4,
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight h5,
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight h6 {
+	padding: 5px 15px;
+}
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight.decoration_background {
+	background-color: #e4dede; 
+}
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight.decoration_A_top {
+	border-top: 4px solid #5bc7d8;
+}
+
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight.decoration_A_full {
+	border: 4px solid #5bc7d8;
+}
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight.decoration_B_top {
+	border-top: 4px solid #f8b732
+}
+
+
+.igem_2018_team_content .igem_2018_team_column_wrapper .highlight.decoration_B_full {
+	border: 4px solid #f8b732;
+}
+
+
+
+
+/*mobile*/
+/**************************************************************************************************************************************************************************************************/
+
+
+/* 1800px  */
+/************************************************/
+@media only screen and (max-width: 1800px) {
+	.igem_2018_team_content { width: 100%;}
+	.igem_2018_team_menu {display:block;}	
+}
+
+/* 1400px  */
+/************************************************/
+@media only screen and (max-width: 1400px) {
+	.igem_2018_team_menu .menu_item { font-size:100%;}
+	.igem_2018_team_menu .submenu .submenu_item { font-size:90%;}
+	.igem_2018_team_menu {display:block;}
+}
+
+@media only screen and (max-width: 1001px) {
+	.igem_2018_team_menu {display:block;}
+}
+
+/* 1000px  */
+/************************************************/
+@media only screen and (max-width: 1000px) {
+	.igem_2018_team_content {width:100%; margin-left:0px;}
+	.igem_2018_team_menu {display:none; margin-top: 45px; min-width:50%; width:50%;}
+	.igem_2018_team_mobile_bar {display:block;}
+	.igem_2018_team_content .igem_2018_team_column_wrapper .column.full_size, .igem_2018_team_content .igem_2018_team_column_wrapper .column.two_thirds_size,.igem_2018_team_content .igem_2018_team_column_wrapper .column.third_size {width:96%; }
+
+}
+
+
+@media only screen and (max-width: 500px) {
+	.igem_2018_team_menu {min-width:100%; width:100%; }
+}
+
+
+/**************************************************************************************************************************************************************************************************/
+
+
+
+/* NAVIGATION BAR */
+#primary_nav_wrap
+{
+	margin-top:0px;
+	overflow-x: visible;
+	/*position: relative;*/
+	/*overflow: hidden;*/
+	background-color: #333;
+	position: fixed;
+	height: 32px;
+	width: 100%;
+	min-width: 1000px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 3px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)
+}
+#primary_nav_wrap ul
+{
+	list-style:none;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0 0 0 20%;
+}
+#primary_nav_wrap ul a
+{
+	display:block;
+	position:relative;
+	color: white;/*#333;*/
+	text-decoration:none;
+	font-weight:700;
+	font-size:15px;
+	line-height:32px;
+	padding:0 15px;
+	z-index: 2000;
+}
+#primary_nav_wrap ul li
+{
+	z-index: 2000;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+	font-family: Helvetica;
+}
+#primary_nav_wrap ul li.current-menu-item
+{
+	background:red;
+}
+#primary_nav_wrap ul li:hover
+{
+	background-color:rgba(160, 192, 239, 0.25);
+	transition: all .1s ease-out;
+	cursor: pointer
+}
+#primary_nav_wrap ul ul
+{
+	position:absolute;
+	top:100%;
+	left:0;
+	background-color:rgba(15, 19, 25, 0.7);
+	padding:0;
+	transition: all .2s ease-out;
+	opacity: 0; /* for anim display:none; -> display:block; */
+	visibility: hidden;
+	margin: -20px 0 0 0; 
+}
+#primary_nav_wrap ul ul li
+{
+	line-height:120%;
+	padding:10px 15px;
+	color: rgba(255,255,255,0.5);
+}
+#primary_nav_wrap ul ul a
+{
+	line-height:120%;
+	padding:10px 15px;
+}
+#primary_nav_wrap ul li:hover > ul
+{
+	opacity: 1;
+	visibility: visible;
+	margin: 0;
+
+}
+
+</style>
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- THIS IS WHERE THE HTML BEGINS --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<head> 
+
+	<!-- This tells the browser that your page is responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+</head>
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Menu --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Content of the page  --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<style>
+.portrait_photo {
+	border-radius: 10px
+}
+</style>
+
+<div class="navbar-fixed">
+<nav class="row blue">
+	<div id="primary_nav_wrap" style="z-index: 2000">
+		<ul>
+			<li class="mobicon"> <a href="javascript:void(0);" onclick="mobnavtoggle()">≡ Menu</a></li>
+			<li><a href="http://2018.igem.org/Team:Groningen">Home</a></li>
+			<li><a onclick="">Team</a>
+				<ul>
+					<li class="dir"><a href="http://2018.igem.org/Team:Groningen/Team">Team Members</a></li>
+					<li class="dir"><a href="">Collaborations</a></li>
+				</ul>
+			</li>
+			<li><a onclick="">Project</a>
+				<ul>					
+					<li><a href="http://2018.igem.org/Team:Groningen/InterLab">InterLab</a></li>
+					<li class="dir">Description</li>
+					<li class="dir">Design</li>
+					<li class="dir">Experiments</li>
+					<li class="dir">Notebook</li>
+					<li class="dir">Model</li>
+					<li class="dir">Results</li>
+					<li class="dir">Demonstrate</li>
+					<li class="dir">Improve</li>
+					<li class="dir">Attributions</li>
+				</ul>
+			</li>
+			<li><a onclick="">Human Practices</a>
+				<ul>
+					<li class="dir">Human Practices</li>
+					<li class="dir">Education & Engagement</li>
+				</ul>
+			</li>
+			<li><a onclick="">Parts</a>
+				<ul>
+					<li class="dir">Parts Overview</li>
+					<li class="dir">Basic Parts</li>
+					<li class="dir">Composite Parts</li>
+					<li class="dir">Part Collection</li>
+				</ul>
+			</li>
+			<li><a onclick="">Awards</a>
+				<ul>
+					<li class="dir">Applied Design</li>
+					<li class="dir">Entrepeneurship</li>
+					<li class="dir">Hardware</li>
+					<li class="dir">Measurement</li>
+					<li class="dir">Model</li>
+					<li class="dir">Plant</li>
+					<li class="dir">Software</li>
+				</ul>
+			</li>
+			<li><a>Sponsors</a></li>
+		</ul>
+	</div>
+</nav>
+<div>
+
+<!------------- toggle mobile menu ----------->
+<script>
+	function mobnavtoggle() {
+		document.getElementByID("primary_nav_wrap").classList.toggle("mobnav");
+	}
+</script>
+
+<style>
+.mobicon {display:none;}
+</style>
+
+<div box-shadow="0 0 px 8px #10722B inset" visibility="hidden">
+	<img src="http://2018.igem.org/wiki/images/5/5c/T--Groningen--WikiBackgroundImage.png" width="100%" height="auto">
+</div>
+<div style="position:relative; height: 15px; ; z-index: 5; box-shadow: 0px 0px 8px 1px black; background-color: white"></div>
+
+<!-- PAGE CONTENT -->
+<div class="igem_2018_team_content" style="background-color: white">
+	<div class="igem_2018_team_column_wrapper">
+		<div class="clear extra_space"></div>
+		<div class="column" style="width: 100%;" align="center">
+			<h1>Meet our team!</h1>
+		</div>
+		<div class="clear extra_space"></div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/2/29/T--Groningen--PhotoRianne.jpg">
+		</div>
+		<div class="column two_thirds_size">
+			<h4> Rianne Prins </h4>
+			<p>Hi, my name is Rianne Prins. Currently, I am in the final year of the research master Medical and Pharmaceutical Drug Innovation and about to finish the last course. After that, I will become a busy iGEM-labrat for the summer! The practical and theoretical experience I obtained during my various internships will hopefully help to make our project an all-time success story.  </p>
+		</div>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/1/1a/T--Groningen--PhotoJens.jpg">
+		</div>
+		<div class="column two_thirds_size">
+			<h4> Jens Schepers </h4>
+			<p>Let me shortly introduce myself, my name is Jens Schepers. Currently, I am in the final weeks of my master Ecology and Evolution during which I followed the ‘Science, Business & Policy’ track. Before I will start my working life (eventually) after this summer, I will be busy for the iGEM team of Groningen this year. The reason I joined this team is, besides that fact it looks good on your resume ofcourse, that I get to team up with a bunch of super smart, ambitious people that combine a whole lot of different expertises.  </p>
+		</div>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/f/f0/T--Groningen--PhotoMatthijsTadema.jpg">
+		</div>
+			<h4> Matthijs Tadema  </h4>
+			<p>I am Matthijs Tadema and I am the treasurer for the Rug IGEM team this year. Currently I am a master student of Molecular Biology and Biotechnology, so naturally the philosophy of IGEM appeals to me. Besides experience in molecular biology I also bring molecular dynamics knowledge to the team, which we can use to simulate parts of our project in molecular detail.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/4/46/T--Groningen--PhotoBenno.jpg">
+		</div>
+		<h4> Benno Diekmann  </h4>
+			<p>Hi, my name is Benno Diekmann and I am currently in the first year of my master pharmacy. I joined iGEM to make more experience in science and because it’s awesome. I find the multidisciplinary approach and the fact that we have to make the plans and find the funding for our research ourselves to be very appealing and a great learning experience.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/8/81/T--Groningen--PhotoBram.jpg">
+		</div>
+		<h4> Bram Wiggers  </h4>
+			<p>My name is Bram Wiggers and I’m very proud to be a member of the iGEM team this year. This is the first year of my Master Artificial Intelligence, a study that really challenges me. This year we will put more focus on the new technical possibilities that AI can bring to bioengineering.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/d/d6/T--Groningen--PhotoNoa.jpg">
+		</div>
+		<h4> Noa Leijdesdorff  </h4>
+			<p>Hi guys! I’m Noa Leijdesdorff. Currently, I’m finishing up my bachelor’s in Biomedical Engineering. Being part of the iGem team has allowed me to combine my love for innovation with working in an interdisciplinary group of ambitious people all working towards the same awesome goal: taking one giant step towards a more sustainable bio-based economy.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/d/dd/T--Groningen--PhotoMatthjisPals.jpg">
+		</div>
+		<h4> Matthijs Pals  </h4>
+			<p>My name is Matthijs Pals. I’m  a second year Artificial Intelligence student who also has a bachelors in Biomedical Engineering. I joined iGEM hoping to be able to apply this combined knowledge in the programming and modelling tasks. Besides that I’m also doing some work on the outreach part since I am somewhat able with Photoshop, even though I still feel more comfortable with a non-digital brush.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/0/05/T--Groningen--PhotoPhillip.jpg">
+		</div>
+		<h4> Phillip Yesley  </h4>
+			<p>Hi, I'm Phillip and my introduction is too embarassing to show on this page.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/f/f3/T--Groningen--PhotoJanMarten.jpg">
+		</div>
+		<h4> Jan Marten Wielenga  </h4>
+			<p>Hi, my name is Jan Marten Wielenga. Currently I’m halfway through my masters in Biomedical Sciences. I signed up for iGEM because I enjoy exploring the possibilities of biotechnology, especially when we can choose our own project and work with a little less supervision.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/6/6b/T--Groningen--PhotoJacques.jpg">
+		</div>
+		<h4> Jacques Hille  </h4>
+			<p>My name is Jacques Hille and I am a master student in chemistry. The iGEM project intrigues me because of various reasons. During my study I got experienced in fields such as biochemistry and organic chemistry, and I am curious to get a taste of biotechnology.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/6/6d/T--Groningen--PhotoIngeborg.jpg">
+		</div>
+		<h4> Ingeborg Frentz  </h4>
+			<p>Hi, I’m Ingeborg Frentz and I am a second year master student in Biomedical Sciences. I joined the iGEM team because I wanted to be able to work on a project from start to finish and the field of biotechnology is really interesting. The multidisciplinary team makes for great discussions during meetings and it will hopefully make our project better!</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/9/98/T--Groningen--PhotoOwen.jpg">
+		</div>
+		<h4> Owen Trepstra  </h4>
+			<p>Hi, I am Owen Terpstra. Currently I am doing my masters in molecular biology and biotechnology. While I study biology, I like science and philosophy in general and am looking to end up in the more chemical side of biology. Besides these geeky interests, I also dance salsa and like acting, at the moment mostly improv comedy. </p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		
+<!------------- Supervisors ----------->
+
+
+	</div>
+</div>
+
+
+
+<div style="position:relative; height: 15px; ; z-index: 5; box-shadow: 0px 0px 8px 1px black; background-color: white"></div>
+
+
+<div align="center">
+	<img src="http://2018.igem.org/wiki/images/1/16/T--Groningen--GroupPhoto.jpg" width="100%" height="auto">
+
+</div>
+</html>
