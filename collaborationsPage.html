@@ -1,0 +1,330 @@
+<!-- Todo: Ad supervisors-->
+
+<html>
+
+
+<script>
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	$(document).ready(function() {
+
+		$("#HQ_page").attr('id','');
+		
+
+		//highlight current page on the menu
+		highlight_current_page_menu();
+			
+		//accessing submenus
+		$(".menu_item").click(function(){
+			$(".submenu_control_icon", this).toggleClass("open");
+			$(this).next(".submenu").fadeToggle(400);
+		});
+		
+		//mobile menu access 
+		$(".igem_2018_team_mobile_bar").click(function(){
+			$(this).next().toggleClass("displaying_menu");
+		});
+		
+	});
+
+
+		function highlight_current_page_menu() {
+			
+			var page_url="http://2018.igem.org/";
+			page_url = page_url + wgPageName;
+			$("a[href$='"+ page_url +"']").children().addClass("current_page");
+			
+			//if the page is in a submenu, open the submenu and make the appropiate changes
+			if( $( ".current_page" ).hasClass( "submenu_item" )){
+				
+				$(".current_page").parent().parent().fadeToggle(400);
+				$(".current_page").parent().parent().prev().addClass("current_page");
+				$(".menu_item.current_page > .submenu_control_icon").toggleClass("open");
+				
+			}
+		}
+
+
+/*********************** Own Script: ****************/
+
+function showPopup(popup_name) {
+    var popup = document.getElementById(popup_name);
+    popup.classList.toggle("show");
+}
+		
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+</script>
+
+<style>
+
+</style>
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- THIS IS WHERE THE HTML BEGINS --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<head> 
+
+	<!-- This tells the browser that your page is responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<script src="scrollreveal.js"> </script>
+	<link rel="stylesheet" type="text/css" href="groningen.css">
+
+
+</head>
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Menu --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Content of the page  --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<style>
+.portrait_photo {
+	border-radius: 10px
+}
+</style>
+
+<div class="navbar-fixed">
+<nav class="row blue">
+	<div id="primary_nav_wrap" style="z-index: 2000">
+		<ul>
+			<li class="mobicon"> <a href="javascript:void(0);" onclick="mobnavtoggle()">≡ Menu</a></li>
+			
+			<li><a href="http://2018.igem.org/Team:Groningen">Home</a></li>
+			<li><a onclick="">Team</a>
+				<ul>
+					<li class="dir"><a href="http://2018.igem.org/Team:Groningen/Team">Team Members</a></li>
+					<li class="dir"><a href="">Collaborations</a></li>
+				</ul>
+			</li>
+			<li><a onclick="">Project</a>
+				<ul>					
+					<li><a href="http://2018.igem.org/Team:Groningen/InterLab">InterLab</a></li>
+					<li class="dir">Description</li>
+					<li class="dir">Design</li>
+					<li class="dir">Experiments</li>
+					<li class="dir">Notebook</li>
+					<li class="dir">Model</li>
+					<li class="dir">Results</li>
+					<li class="dir">Demonstrate</li>
+					<li class="dir">Improve</li>
+					<li class="dir">Attributions</li>
+				</ul>
+			</li>
+			<li><a onclick="">Human Practices</a>
+				<ul>
+					<li class="dir">Human Practices</li>
+					<li class="dir">Education & Engagement</li>
+				</ul>
+			</li>
+			<li><a onclick="">Parts</a>
+				<ul>
+					<li class="dir">Parts Overview</li>
+					<li class="dir">Basic Parts</li>
+					<li class="dir">Composite Parts</li>
+					<li class="dir">Part Collection</li>
+				</ul>
+			</li>
+			<li><a onclick="">Awards</a>
+				<ul>
+					<li class="dir">Applied Design</li>
+					<li class="dir">Entrepeneurship</li>
+					<li class="dir">Hardware</li>
+					<li class="dir">Measurement</li>
+					<li class="dir">Model</li>
+					<li class="dir">Plant</li>
+					<li class="dir">Software</li>
+				</ul>
+			</li>
+			<li><a>Sponsors</a></li>
+		</ul>
+	</div>
+</nav>
+<div>
+
+<!------------- toggle mobile menu ----------->
+<script>
+	function mobnavtoggle() {
+		document.getElementByID("primary_nav_wrap").classList.toggle("mobnav");
+	}
+</script>
+
+<style>
+.mobicon {display:none;}
+</style>
+
+<div box-shadow="0 0 px 8px #10722B inset" visibility="hidden">
+	<img src="http://2018.igem.org/wiki/images/5/5c/T--Groningen--WikiBackgroundImage.png" width="100%" height="auto">
+</div>
+<div style="position:relative; height: 15px; ; z-index: 5; box-shadow: 0px 0px 8px 1px black; background-color: white"></div>
+
+<!-- PAGE CONTENT -->
+<div class="igem_2018_team_content" style="background-color: white">
+	<div class="igem_2018_team_column_wrapper">
+		<div class="clear extra_space"></div>
+		<div class="column" style="width: 100%;" align="center">
+			<h1 class="headline popup" onclick="showPopup('popUp_meetTeam')">Meet our team! <span class="popuptext" id="popUp_meetTeam">The winning team baby!</span></h1>
+		</div>
+		<ul>
+			<li><a href="#owen_object">Go to Owen!</a> </li>
+		</ul>
+		<div class="clear extra_space"></div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo popup" src="http://2018.igem.org/wiki/images/2/29/T--Groningen--PhotoRianne.jpg" onclick="showPopup('popUp_rianne')">
+		</div>
+		<div class="column two_thirds_size">
+			<h4 class="fading_title"> Rianne Prins </h4>
+			<p class="fading_text popup" onclick="showPopup('popUp_rianne')">Hi, my name is Rianne Prins. Currently, I am in the final year of the research master Medical and Pharmaceutical Drug Innovation and about to finish the last course. After that, I will become a busy iGEM-labrat for the summer! The practical and theoretical experience I obtained during my various internships will hopefully help to make our project an all-time success story. <span class="popuptext" id="popUp_rianne">Thanks for clicking!</span> </p>
+		</div>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/1/1a/T--Groningen--PhotoJens.jpg">
+		</div>
+		<div class="column two_thirds_size">
+			<h4 class="fading_title"> Jens Schepers </h4>
+			<p class="fading_text">Let me shortly introduce myself, my name is Jens Schepers. Currently, I am in the final weeks of my master Ecology and Evolution during which I followed the ‘Science, Business & Policy’ track. Before I will start my working life (eventually) after this summer, I will be busy for the iGEM team of Groningen this year. The reason I joined this team is, besides that fact it looks good on your resume ofcourse, that I get to team up with a bunch of super smart, ambitious people that combine a whole lot of different expertises.  </p>
+		</div>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/f/f0/T--Groningen--PhotoMatthijsTadema.jpg">
+		</div>
+			<h4 class="fading_title"> Matthijs Tadema  </h4>
+			<p class="fading_text">I am Matthijs Tadema and I am the treasurer for the Rug IGEM team this year. Currently I am a master student of Molecular Biology and Biotechnology, so naturally the philosophy of IGEM appeals to me. Besides experience in molecular biology I also bring molecular dynamics knowledge to the team, which we can use to simulate parts of our project in molecular detail.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/4/46/T--Groningen--PhotoBenno.jpg">
+		</div>
+		<h4 class="fading_title"> Benno Diekmann  </h4>
+			<p class="fading_text">Hi, my name is Benno Diekmann and I am currently in the first year of my master pharmacy. I joined iGEM to make more experience in science and because it’s awesome. I find the multidisciplinary approach and the fact that we have to make the plans and find the funding for our research ourselves to be very appealing and a great learning experience.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/8/81/T--Groningen--PhotoBram.jpg">
+		</div>
+		<h4 class="fading_title"> Bram Wiggers  </h4>
+			<p class="fading_text">My name is Bram Wiggers and I’m very proud to be a member of the iGEM team this year. This is the first year of my Master Artificial Intelligence, a study that really challenges me. This year we will put more focus on the new technical possibilities that AI can bring to bioengineering.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/d/d6/T--Groningen--PhotoNoa.jpg">
+		</div>
+		<h4 class="fading_title"> Noa Leijdesdorff  </h4>
+			<p class="fading_text">Hi guys! I’m Noa Leijdesdorff. Currently, I’m finishing up my bachelor’s in Biomedical Engineering. Being part of the iGem team has allowed me to combine my love for innovation with working in an interdisciplinary group of ambitious people all working towards the same awesome goal: taking one giant step towards a more sustainable bio-based economy.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/d/dd/T--Groningen--PhotoMatthjisPals.jpg">
+		</div>
+		<h4 class="fading_title"> Matthijs Pals  </h4>
+			<p class="fading_text">My name is Matthijs Pals. I’m  a second year Artificial Intelligence student who also has a bachelors in Biomedical Engineering. I joined iGEM hoping to be able to apply this combined knowledge in the programming and modelling tasks. Besides that I’m also doing some work on the outreach part since I am somewhat able with Photoshop, even though I still feel more comfortable with a non-digital brush.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/0/05/T--Groningen--PhotoPhillip.jpg">
+		</div>
+		<h4 class="fading_title"> Phillip Yesley  </h4>
+			<p class="fading_text">Hi, I'm Phillip and my introduction is too embarassing to show on this page.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/f/f3/T--Groningen--PhotoJanMarten.jpg">
+		</div>
+		<h4 class="fading_title"> Jan Marten Wielenga  </h4>
+			<p class="fading_text">Hi, my name is Jan Marten Wielenga. Currently I’m halfway through my masters in Biomedical Sciences. I signed up for iGEM because I enjoy exploring the possibilities of biotechnology, especially when we can choose our own project and work with a little less supervision.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/6/6b/T--Groningen--PhotoJacques.jpg">
+		</div>
+		<h4 class="fading_title"> Jacques Hille  </h4>
+			<p class="fading_text">My name is Jacques Hille and I am a master student in chemistry. The iGEM project intrigues me because of various reasons. During my study I got experienced in fields such as biochemistry and organic chemistry, and I am curious to get a taste of biotechnology.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/6/6d/T--Groningen--PhotoIngeborg.jpg">
+		</div>
+		<h4 class="fading_title"> Ingeborg Frentz  </h4>
+			<p class="fading_text">Hi, I’m Ingeborg Frentz and I am a second year master student in Biomedical Sciences. I joined the iGEM team because I wanted to be able to work on a project from start to finish and the field of biotechnology is really interesting. The multidisciplinary team makes for great discussions during meetings and it will hopefully make our project better!</p>
+	
+	<div id="owen_object">This is an Owen Object!</div>
+			
+		<div class="clear extra_space"></div>	
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/9/98/T--Groningen--PhotoOwen.jpg">
+		</div>
+	
+		<h4 class="fading_title"> Owen Trepstra  </h4>
+			<p class="fading_text">Hi, I am Owen Terpstra. Currently I am doing my masters in molecular biology and biotechnology. While I study biology, I like science and philosophy in general and am looking to end up in the more chemical side of biology. Besides these geeky interests, I also dance salsa and like acting, at the moment mostly improv comedy. </p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+	
+
+		
+<!------------- Supervisors ----------->
+
+
+	</div>
+</div>
+
+<script>
+	ScrollReveal().reveal('.fading_text', {duration: 2000});
+	ScrollReveal().reveal('.portrait_photo', {duration: 1000});
+	ScrollReveal().reveal('.h4', {duration: 2000});
+</script>
+
+
+
+<div style="position:relative; height: 15px; ; z-index: 5; box-shadow: 0px 0px 8px 1px black; background-color: white"></div>
+
+
+<div align="center">
+	<img src="http://2018.igem.org/wiki/images/1/16/T--Groningen--GroupPhoto.jpg" width="100%" height="auto">
+
+</div>
+</html>
