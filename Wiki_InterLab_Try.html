@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html>
+
+<style>
+
+</style>
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- THIS IS WHERE THE HTML BEGINS --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<head> 
+
+	<!-- This tells the browser that your page is responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<script src="scrollreveal.js"> </script>
+	<link rel="stylesheet" type="text/css" href="groningen.css">
+
+
+</head>
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Menu --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Content of the page  --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<style>
+.portrait_photo {
+	border-radius: 10px
+}
+</style>
+
+<div class="navbar-fixed">
+<nav class="row blue">
+	<div id="primary_nav_wrap" style="z-index: 2000">
+		<ul>
+			<li class="mobicon"> <a href="javascript:void(0);" onclick="mobnavtoggle()">≡ Menu</a></li>
+			<li><a href="http://2018.igem.org/Team:Groningen">Home</a></li>
+			<li><a onclick="">Team</a>
+				<ul>
+					<li class="dir"><a href="http://2018.igem.org/Team:Groningen/Team">Team Members</a></li>
+					<li class="dir"><a href="">Collaborations</a></li>
+				</ul>
+			</li>
+			<li><a onclick="">Project</a>
+				<ul>					
+					<li><a href="http://2018.igem.org/Team:Groningen/InterLab">InterLab</a></li>
+					<li class="dir">Description</li>
+					<li class="dir">Design</li>
+					<li class="dir">Experiments</li>
+					<li class="dir">Notebook</li>
+					<li class="dir">Model</li>
+					<li class="dir">Results</li>
+					<li class="dir">Demonstrate</li>
+					<li class="dir">Improve</li>
+					<li class="dir">Attributions</li>
+				</ul>
+			</li>
+			<li><a onclick="">Human Practices</a>
+				<ul>
+					<li class="dir">Human Practices</li>
+					<li class="dir">Education & Engagement</li>
+				</ul>
+			</li>
+			<li><a onclick="">Parts</a>
+				<ul>
+					<li class="dir">Parts Overview</li>
+					<li class="dir">Basic Parts</li>
+					<li class="dir">Composite Parts</li>
+					<li class="dir">Part Collection</li>
+				</ul>
+			</li>
+			<li><a onclick="">Awards</a>
+				<ul>
+					<li class="dir">Applied Design</li>
+					<li class="dir">Entrepeneurship</li>
+					<li class="dir">Hardware</li>
+					<li class="dir">Measurement</li>
+					<li class="dir">Model</li>
+					<li class="dir">Plant</li>
+					<li class="dir">Software</li>
+				</ul>
+			</li>
+			<li><a>Sponsors</a></li>
+		</ul>
+	</div>
+</nav>
+<div>
+
+<!------------- toggle mobile menu ----------->
+<script>
+	function mobnavtoggle() {
+		document.getElementByID("primary_nav_wrap").classList.toggle("mobnav");
+	}
+</script>
+
+<style>
+.mobicon {display:none;}
+</style>
+
+<div box-shadow="0 0 px 8px #10722B inset" visibility="hidden">
+	<img src="http://2018.igem.org/wiki/images/5/5c/T--Groningen--WikiBackgroundImage.png" width="100%" height="auto">
+</div>
+<div style="position:relative; height: 15px; ; z-index: 5; box-shadow: 0px 0px 8px 1px black; background-color: white"></div>
+
+<div class="igem_2018_team_content" style="background-color: white">
+	<div class="igem_2018_team_column_wrapper">
+		<div class="clear extra_space"></div>
+		<div class="column" style="width: 100%;" align="center">
+
+			
+			<h1>InterLab Study</h1>
+			<p> Our team participated in one of the biggest interlaboratory studies within the field of synthetic biology: the 5<sup>th</sup> international iGEM Interlab Study. Repeatable measurements between labs are needed in research but are often difficult. This Interlab study aims to establish comparable measurements between different laboratories for the iGEM community and the field of synthetic biology in general. </p> 
+			<p> The study focuses on the measurement of fluorescence, since green fluorescent protein (GFP) is one of the most used markers in synthetic biology and therefore most laboratories are equipped to measure its fluorescence. Fluorescence data can usually not be compared because it is reported in arbitrary units and different groups may process data in different ways. If we can enable direct comparison of the data, this would make debugging of engineered biological constructs more efficient, as well as sharing of constructs between labs and interpretation of experimental controls.  </p>
+</div>
+	<div class="column">
+			<h4> Research question </h4>
+			<p> In previous years, it has already been demonstrated that GFP expression between labs can be calibrated against a known concentration of a fluorescent molecule, which greatly reduces the variability between labs. However, with bulk measurements of cells, such as in a plate reader, there is still a large source of variability in the measurements: the number of GFP producing cells in the sample. Because the fluorescence measured by such a plate reader is the sum of the fluorescence of all the cells in a sample, we can divide the fluorescence by the number of cells to determine the mean expression of GFP per cell. Usually, the number of cells in a sample is estimated by measurement of absorbance of light at 600 nm, which results in an optical density (OD) value. These measurements are however subject to high variability between labs. Moreover it is unclear to what extent this approximation approaches the actual number of cells. If we used a more direct method to determine the cell count in each sample, we could remove another source of variability in our measurements.  </p>
+		</div>
+	<div class="column">
+			<h4> Aim </h4>
+			<p> Therefore, iGEM teams from all over the world will measure both absorbance (OD600) and fluorescence in a plate reader, of GFP-producing strains of Escherichia coli DH5α. All teams that contribute to this research follow the same detailed <a href="http://2018.igem.org/wiki/images/0/09/2018_InterLab_Plate_Reader_Protocol.pdf">protocol</a> In this manner, all the different iGEM teams will obtain absolute units for GFP measurement in their plate readers, after which their data can be compared and most likely key errors causing differences can be identified. We tested <a href="http://parts.igem.org/Help:2017_Competent_Cell_Test_Kit ">competence</a> and subsequently <a href="http://parts.igem.org/Help:Protocols/Transformation ">transformed</a> different plasmids, containing a gene for GFP production, behind promotors with different strengths, resulting in different levels of GFP production. The following plasmids, obtained from the IGEM 2018 distribution kit, were used: </p>
+			
+			<table style="font-family: Asap Condensed; font-size: 15px">
+				<style>
+				table {
+					font-family: Asap Condensed;
+					border-collapse:collapse;
+					width: 80%
+				}
+				td, th {
+					border: 1px solid #75E882;
+					text-align: left;
+					padding: 8px;
+				}
+				tr:nth-child(even) {
+					background-color: #95F2A0;
+				}
+
+			</style>
+			<tr>
+				<th>Device</th>
+				<th>Plasmid</th>
+				<th>Promotor</th>
+  <tr>
+    <td>Negative Control</td>
+    <td> <a href="http://parts.igem.org/Part:BBa_R0040">BBa_R0040</a></td> 
+    <td>TetR repressible promotor</td>
+  </tr>
+  <tr>
+    <td>Positve control</td>
+    <td><a href="http://parts.igem.org/Part:BBa_I20270">BBa_I20270</a></td>
+    <td>J23151 promotor</td>
+  </tr>
+  <tr>
+    <td>Test Device 1</td>
+    <td><a href="http://parts.igem.org/Part:BBa_J364000">BBa_J364000</a></td>
+    <td>J23101 promotor</td>
+  </tr>
+  <tr>
+    <td>Test Device 2</td>
+    <td><a href="http://parts.igem.org/Part:BBa_J364001">BBa_J364001</a></td>
+    <td>J23106 promotor</td>
+  </tr>
+  <tr>
+    <td>Test Device 3</td>
+    <td><a href="http://parts.igem.org/Part:BBa_J364002">BBa_J364002</a></td>
+    <td>J23117 promotor</td>
+  </tr>
+  <tr>
+    <td>Test Device 4</td>
+    <td><a href="http://parts.igem.org/Part:BBa_J364007">BBa_J364007</a></td>
+    <td>J23100 promotor</td>
+  </tr>
+  <tr>
+    <td>Test Device 5</td>
+    <td><a href="http://parts.igem.org/Part:BBa_J364008">BBa_J364008</a></td>
+    <td>J23104 promotor</td>
+  </tr>
+  <tr>
+    <td>Test Device 6</td>
+    <td><a href="http://parts.igem.org/Part:BBa_J364009">BBa_J364009</a></td>
+    <td>J23116 promotor</td>
+  </tr>
+</table>
+<p>The plate reader (Tecan Spark 10M) settings were carefully adjusted to the exact same values for each experiment and factors that may affect measurements such as fingerprints on the plates were avoided. Emission and excitation were 530 nm and 485 nm, respectively, with a 20 nm bandpass width. Measurements were performed using top optics. </p>
+		</div>
+	<div class="column">
+			<h4> Experiments </h4>
+			<p> We perform three calibration experiments to be able to convert our cell measurements to more absolute units. 	Subsequently, we grow our cells for 6 hours and measure OD600 and fluorescence at both 0 and 6 hours. We use the calibration data to obtain units which we can compare with other laboratories.    </p>
+			<p> For the first calibration, we measure the absorbance of a LUDOX solution with a known concentration in a plate reader, to obtain a conversion factor between measurement tools. In a plate reader, the path length of light depends on the volume of the sample because light goes through the plate vertically. Instead, in a spectrophotometer, light passes through horizontally, which fixes the path length to the width of the cuvette. </p>
+			<p> We furthermore measure the absorbance of silica bead particles that resemble E. coli cells in size and shape and should therefore scatter light in a similar way as our bacterial cells. With a known concentration of silica bead suspension, we can convert absorbances measured in the plate reader to a standardized beads equivalent, thus number of cells. Another approach to determine the number of cells in a sample, is to obtain a specific OD600 in the plate reader and subsequently plate these samples on selective agar plates. We counted colony forming units (CFU) and, assuming one bacterial cell gives rise to one colony forming unit, calculated how many cells were present in the starting sample at the OD600 given by the plate reader. These two experiments will give more insight into accuracy of the OD600 measurements by plate readers and whether they can  be standardized between labs to compare mean fluorescence per cell values.  </p>
+			<p> Finally, we perform a dilution series of a fluorescent molecule (fluorescein) solution with a known concentration, to be able to convert our GFP fluorescence measurements to an equivalent fluorescein concentration.</p>
+		</div>
+	<div class="column">
+			<h4> Results </h4>
+			<p> All the plasmids were successfully transformed in our highly competent cells at the first attempt. Most devices showed highly increased growth at 6 hours compared to 0 hours, except for device 1, which did not have a high growth rate. Regarding the expression of GFP and measurement of fluorescence, most fluorescence was observed in device 4. As expected, the positive control showed brighter fluorescence than the negative control. Only device 3 did not show a high levels of fluorescence. 	  </p>
+			<p> The calibration experiments provided us with the following conversion factors:</p>
+
+			<style>
+				.table {
+					font-family: Asap Condensed;
+					border-collapse:collapse;
+					width: 80%
+				}
+				 th{
+				 	background-color: #95F2A0;
+				 	color: #00B013;
+				 }
+				td, th {
+					border: 1px solid #75E882;
+					font-family: Asap Condensed;
+					font-size: 5px;
+					text-align: left;
+					padding: 4px;
+				}
+				tr:nth-child(even) {
+					background-color: #95F2A0;
+				}
+			</style>
+			<table style="font-family: Asap Condensed; font-size: 15px">
+				<tr> 
+					<th>Calibration</th>
+					<th>Value</th>
+					<th>Conversion</th>
+				</tr>
+				<tr>
+					<td>LUDOX</td>
+					<td>3,39</td>
+					<td>Absorbance value measured in a plate reader to the OD600 measured in a reference spectrophotometer</td>
+				</tr>
+				<tr>
+					<td>Silica</td>
+					<td>2,29&times;10<sup>8</sup></td>
+					<td>Absorbance value in a plate reader to a number of equivalent silica bead particles </td>
+				</tr>
+				<tr>
+					<td>Fluorescein</td>
+					<td>1,65&times;10<sup>-4</sup></td>
+					<td>Arbitrary fluorescence values of the plate reader to an equivalent fluorescein concentration</td>
+				</tr>
+				<tr>
+					<td>Fluorescein</td>
+					<td>9,92&times;10<sup>8</sup></td>
+					<td>Arbitrary fluorescence values of the plate reader to Molecules of Equivalent Fluorescein (MEFL)</td>
+				</tr>
+			</table>
+
+			<p> With these conversion factors, we can plot uM fluorescein/OD600 and MEFL/particle, to obtain absolute units of fluorescence per cell which we can compare to the other iGEM teams. </p>
+			
+			<h4> Outlook </h4>
+			<p> In the raw fluorescence measurements, device 4 had the highest brightness and device 1 had the lowest growth rate of all devices. However, when the raw data is corrected to fluorescence per OD600 or per particle, device 1 has a much higher level of fluorescence per cell than device 4. We are curious to see what the results of the other teams are and whether our InterLab research can reduce the interlaboratory differences in fluorescence measurements.</p>
+			
+		</div>
+<img class="figure" src="http://2018.igem.org/wiki/images/f/fb/T--Groningen--InterLab-fig1.jpeg" style="width:50%"><img class="img" src="http://2018.igem.org/wiki/images/7/73/T--Groningen--InterLab-fig2.jpeg" style="width: 50%">
+			<div class="column half_size"><i>Figure 1. We produced a particle standard curve to enable conversion of OD<sub>600</sub> by the plate reader to a number of cells.</i></div>
+			<div class="column half_size"><i>Figure 2. We produced a fluorescein standard curve to enable conversion of fluorescence measured by the plate reader to an equivalent fluorescein concentration. </i></div>
+		
+		<img src="http://2018.igem.org/wiki/images/e/e1/T--Groningen--InterLab-fig3.jpeg" style="width:50%"><img src="http://2018.igem.org/wiki/images/0/00/T--Groningen--InterLab-fig4.jpeg" style="width:50%">
+			<div class="column half_size"><i>Figure 3. Fluorescence (raw values) of the different cell strains used in this study for time points 0 and 6 hours.</i></div>
+			<div class="column half_size"><i>Figure 4. OD<sub>600</sub> (raw values of absorbance at 600 nm) of the different cell strains used in this study for time points 0 and 6 hours.</i></div>
+		
+			<div>
+			<img src="http://2018.igem.org/wiki/images/6/69/T--Groningen--InterLab-fig5.jpeg" style="width: 50%"><img src="http://2018.igem.org/wiki/images/4/4b/T--Groningen--InterLab-EMFLthing.png" style="width: 50%">
+			<div class="column half_size"><i>Figure 5. Fluorescence per OD<sub>600</sub> of the different cell strains used in this study for time points 0 and 6 hours. </i></div>
+			<div class="column half_size"><i>Figure 6. MEFL/particle of the different cell strains used in this study for time points 0 and 6 hours.</i></div>
+		</div>
+
+</html>
