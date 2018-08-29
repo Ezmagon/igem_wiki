@@ -1,0 +1,167 @@
+
+<script>
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	$(document).ready(function() {
+
+		$("#HQ_page").attr('id','');
+		
+
+		//highlight current page on the menu
+		highlight_current_page_menu();
+			
+		//accessing submenus
+		$(".menu_item").click(function(){
+			$(".submenu_control_icon", this).toggleClass("open");
+			$(this).next(".submenu").fadeToggle(400);
+		});
+		
+		//mobile menu access 
+		$(".igem_2018_team_mobile_bar").click(function(){
+			$(this).next().toggleClass("displaying_menu");
+		});
+		
+	});
+
+
+		function highlight_current_page_menu() {
+			
+			var page_url="http://2018.igem.org/";
+			page_url = page_url + wgPageName;
+			$("a[href$='"+ page_url +"']").children().addClass("current_page");
+			
+			//if the page is in a submenu, open the submenu and make the appropiate changes
+			if( $( ".current_page" ).hasClass( "submenu_item" )){
+				
+				$(".current_page").parent().parent().fadeToggle(400);
+				$(".current_page").parent().parent().prev().addClass("current_page");
+				$(".menu_item.current_page > .submenu_control_icon").toggleClass("open");
+				
+			}
+		}
+
+
+/*********************** Own Script: ****************/
+
+function showPopup(popup_name) {
+    var popup = document.getElementById(popup_name);
+    popup.classList.toggle("show");
+}
+		
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+</script>
+
+<style>
+
+</style>
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- THIS IS WHERE THE HTML BEGINS --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<head> 
+
+	<!-- This tells the browser that your page is responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<script src="scrollreveal.js"> </script>
+	<link rel="stylesheet" type="text/css" href="groningen.css">
+
+</head>
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Menu --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Content of the page  --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<style>
+.portrait_photo {
+	border-radius: 10px
+}
+</style>
+
+<div class="navbar-fixed">
+<nav class="row blue">
+	<div id="primary_nav_wrap" style="z-index: 2000">
+		<ul>
+			<li class="mobicon"> <a href="javascript:void(0);" onclick="mobnavtoggle()">≡ Menu</a></li>
+			
+			<li><a href="http://2018.igem.org/Team:Groningen">Home</a></li>
+			<li><a onclick="">Team</a>
+				<ul>
+					<li class="dir"><a href="http://2018.igem.org/Team:Groningen/Team">Team Members</a></li>
+					<li class="dir"><a href="">Collaborations</a></li>
+				</ul>
+			</li>
+			<li><a onclick="">Project</a>
+				<ul>					
+					<li><a href="http://2018.igem.org/Team:Groningen/InterLab">InterLab</a></li>
+					<li class="dir">Description</li>
+					<li class="dir">Design</li>
+					<li class="dir">Experiments</li>
+					<li class="dir">Notebook</li>
+					<li class="dir">Model</li>
+					<li class="dir">Results</li>
+					<li class="dir">Demonstrate</li>
+					<li class="dir">Improve</li>
+					<li class="dir">Attributions</li>
+				</ul>
+			</li>
+			<li><a onclick="">Human Practices</a>
+				<ul>
+					<li class="dir">Human Practices</li>
+					<li class="dir">Education & Engagement</li>
+				</ul>
+			</li>
+			<li><a onclick="">Parts</a>
+				<ul>
+					<li class="dir">Parts Overview</li>
+					<li class="dir">Basic Parts</li>
+					<li class="dir">Composite Parts</li>
+					<li class="dir">Part Collection</li>
+				</ul>
+			</li>
+			<li><a onclick="">Awards</a>
+				<ul>
+					<li class="dir">Applied Design</li>
+					<li class="dir">Entrepeneurship</li>
+					<li class="dir">Hardware</li>
+					<li class="dir">Measurement</li>
+					<li class="dir">Model</li>
+					<li class="dir">Plant</li>
+					<li class="dir">Software</li>
+				</ul>
+			</li>
+			<li><a>Sponsors</a></li>
+		</ul>
+	</div>
+</nav>
+<div>
+
+<!------------- toggle mobile menu ----------->
+<script>
+	function mobnavtoggle() {
+		document.getElementByID("primary_nav_wrap").classList.toggle("mobnav");
+	}
+</script>
+
+<style>
+.mobicon {display:none;}
+</style>
+
+<div box-shadow="0 0 px 8px #10722B inset" visibility="hidden">
+	<img src="http://2018.igem.org/wiki/images/5/5c/T--Groningen--WikiBackgroundImage.png" width="100%" height="auto">
+</div>
+<div style="position:relative; height: 15px; ; z-index: 5; box-shadow: 0px 0px 8px 1px black; background-color: white"></div>
+
+<!-- PAGE CONTENT -->
+
+
+
