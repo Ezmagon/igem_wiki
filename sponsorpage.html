@@ -1,0 +1,511 @@
+<html>
+
+
+<script>
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	$(document).ready(function() {
+
+		$("#HQ_page").attr('id','');
+		
+
+		//highlight current page on the menu
+		highlight_current_page_menu();
+			
+		//accessing submenus
+		$(".menu_item").click(function(){
+			$(".submenu_control_icon", this).toggleClass("open");
+			$(this).next(".submenu").fadeToggle(400);
+		});
+		
+		//mobile menu access 
+		$(".igem_2018_team_mobile_bar").click(function(){
+			$(this).next().toggleClass("displaying_menu");
+		});
+		
+	});
+
+
+		function highlight_current_page_menu() {
+			
+			var page_url="http://2018.igem.org/";
+			page_url = page_url + wgPageName;
+			$("a[href$='"+ page_url +"']").children().addClass("current_page");
+			
+			//if the page is in a submenu, open the submenu and make the appropiate changes
+			if( $( ".current_page" ).hasClass( "submenu_item" )){
+				
+				$(".current_page").parent().parent().fadeToggle(400);
+				$(".current_page").parent().parent().prev().addClass("current_page");
+				$(".menu_item.current_page > .submenu_control_icon").toggleClass("open");
+				
+			}
+		}
+
+
+/*********************** Own Script: ****************/
+
+function showPopup(popup_name) {
+    var popup = document.getElementById(popup_name);
+    popup.classList.toggle("show");
+}
+		
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+</script>
+
+<style>
+
+.hpline {
+    border-left: 6px solid green;
+    height: 100%;
+    align-content: center;
+}
+
+</style>
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- THIS IS WHERE THE HTML BEGINS --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<head> 
+
+	<!-- This tells the browser that your page is responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<script src="scrollreveal.js"> </script>
+	<link rel="stylesheet" type="text/css" href="groningen.css">
+
+</head>
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Menu --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Content of the page  --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<style>
+.portrait_photo {
+	border-radius: 10px
+}
+</style>
+
+<div class="navbar-fixed">
+<nav class="row blue">
+	<div id="primary_nav_wrap" style="z-index: 2000">
+		<ul>
+			<li class="mobicon"> <a href="javascript:void(0);" onclick="mobnavtoggle()">≡ Menu</a></li>
+			
+			<li><a href="http://2018.igem.org/Team:Groningen">Home</a></li>
+			<li><a onclick="">Team</a>
+				<ul>
+					<li class="dir"><a href="http://2018.igem.org/Team:Groningen/Team">Team Members</a></li>
+					<li class="dir"><a href="">Collaborations</a></li>
+				</ul>
+			</li>
+			<li><a onclick="">Project</a>
+				<ul>					
+					<li><a href="http://2018.igem.org/Team:Groningen/InterLab">InterLab</a></li>
+					<li class="dir">Description</li>
+					<li class="dir">Design</li>
+					<li class="dir">Experiments</li>
+					<li class="dir">Notebook</li>
+					<li class="dir">Model</li>
+					<li class="dir">Results</li>
+					<li class="dir">Demonstrate</li>
+					<li class="dir">Improve</li>
+					<li class="dir">Attributions</li>
+				</ul>
+			</li>
+			<li><a onclick="">Human Practices</a>
+				<ul>
+					<li class="dir">Human Practices</li>
+					<li class="dir">Education & Engagement</li>
+				</ul>
+			</li>
+			<li><a onclick="">Parts</a>
+				<ul>
+					<li class="dir">Parts Overview</li>
+					<li class="dir">Basic Parts</li>
+					<li class="dir">Composite Parts</li>
+					<li class="dir">Part Collection</li>
+				</ul>
+			</li>
+			<li><a onclick="">Awards</a>
+				<ul>
+					<li class="dir">Applied Design</li>
+					<li class="dir">Entrepeneurship</li>
+					<li class="dir">Hardware</li>
+					<li class="dir">Measurement</li>
+					<li class="dir">Model</li>
+					<li class="dir">Plant</li>
+					<li class="dir">Software</li>
+				</ul>
+			</li>
+			<li><a>Sponsors</a></li>
+		</ul>
+	</div>
+</nav>
+<div>
+
+<!------------- toggle mobile menu ----------->
+<script>
+	function mobnavtoggle() {
+		document.getElementByID("primary_nav_wrap").classList.toggle("mobnav");
+	}
+</script>
+
+<style>
+.mobicon {display:none;}
+</style>
+
+<div box-shadow="0 0 px 8px #10722B inset" visibility="hidden">
+	<img src="http://2018.igem.org/wiki/images/5/5c/T--Groningen--WikiBackgroundImage.png" width="100%" height="auto">
+</div>
+<div style="position:relative; height: 15px; ; z-index: 5; box-shadow: 0px 0px 8px 1px black; background-color: white"></div>
+
+<script>
+	function company_click(company_url){
+		window.open(company_url);
+	}
+
+
+</script>
+
+
+<!-- Page content -->
+
+<div class="igem_2018_team_content" style="background-color: white">
+	<div class="igem_2018_team_column_wrapper">
+		<div class="clear extra_space"></div>
+		<div class="clear extra_space"></div>
+		<div align="center">
+			<img src="http://2018.igem.org/wiki/images/archive/8/84/20180627155313%21T--Groningen--Logo.png" width="40%" height="auto">
+		</div>
+		<div class="clear extra_space"></div>		
+		<div class="clear extra_space"></div>
+	</div>
+</div>
+<div class="igem_2018_team_content" style="background-color: white">
+	<div class="igem_2018_team_column_wrapper">
+
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/5/51/T--Groningen--evbiotech.png">
+		</div>
+		<div class="column two_thirds_size">
+			<h4 align="right"> EV Biotech </h4>
+			<p>EV Biotech is a bio-technological company that develops state-of-the-art microbial cell factory (MCF) strains for effective and sustainable production of chemical compounds on demand.</p>
+		</div>
+
+		<div class="clear extra_space"></div>
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column two_thirds_size">
+			<h4> DSM </h4>
+			<p>Royal DSM is a global science-based company active in health, nutrition and materials. By connecting its unique competences in life sciences and materials sciences DSM is driving economic prosperity, environmental progress and social advances to create sustainable value for all stakeholders simultaneously.</p>
+		</div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/thumb/4/48/T--Groningen--dsm.png/800px-T--Groningen--dsm.png.jpeg">
+		</div>
+		<div class="clear extra_space"></div>
+		
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/f/f1/T--Groningen--alice.png">
+		</div>
+		<div class="column two_thirds_size">
+			<h4 align="right"> ALICE </h4>
+			<p>The Artificial Intelligence Institute (ALICE) at the University of Groningen is involved in research activities in the area of artificial intelligence and cognitive engineering. Inherently interdisciplinary in nature, research in the department employs broad concepts from computer science, biology, psychology, linguistics, the humanities and more in order to develop computational models with embedded perceptual, cognitive, and behavioral control functions. Fundamental research is conducted in four major areas of artificial intelligence: cognitive modeling, multi-agent systems, autonomous perceptive systems and sensory cognition.</p>
+		</div>
+		<div class="clear extra_space"></div>
+
+		<div class="line_divider"></div>
+		<div class="column two_thirds_size">
+			<h4> Groningen Biomolecular Sciences and Biotechnology Institute (GBB)  </h4>
+			<p>GBB is a centre for top noted research and teaching in biomolecular sciences, hosting the subdisciplines biochemistry, bioinformatics, biophysical chemistry, cell biology, chemical biology, enzymology, genetics, microbiology and systems biology. The focus is on curiosity-driven science, with application outlets into (industrial) biotechnology and biomedicine. 
+</p>
+		</div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/d/da/T--Groningen--gbb.png">
+		</div>
+		<div class="clear extra_space"></div>
+
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/e/ef/T--Groningen--ziam.png">
+		</div>
+		<div class="column two_thirds_size">
+			<h4 align="right"> Zernike Institute for Advanced Materials </h4>
+			<p>ZIAM’s mission is the design and scientific study of materials for functionality. The strength of the institute lies in focused, curiosity-driven, symbiotic studies of functional materials involving researchers from physics, chemistry and biology. Their main driving force is the desire to understand how things work at the microscopic level. In the field of nanoscience and nanotechnology the Zernike Institute for Advanced Materials covers the whole chain from synthesizing materials, building devices, characterizing materials and devices, and investigating the theoretical foundation of their properties.</p>
+		</div>
+		<div class="clear extra_space"></div>
+		
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column two_thirds_size">
+			<h4> Bernoulli Institute for Mathematics, Computer Science and Artificial Intelligence (JBI) </h4>
+			<p>The mission of the JBI is to perform outstanding academic research and teaching in Mathematics, Computer Science, and Artificial Intelligence, and to maintain international leadership herein; to foster these disciplines as a living body of knowledge, and to make it relevant to society in its broadest sense. The symbiosis between pure and applied science, and between mono- and multidisciplinary research and teaching, is a distinguishing characteristic of the institute. As an important part of this mission we aim to transfer our results to other areas of science and technology, and initiate and expand inter- and multi-disciplinary research collaborations.</p>
+		</div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/9/9b/T--Groningen--jbi.png">
+		</div>
+		<div class="clear extra_space"></div>
+		
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/b/bf/T--Groningen--md.gif">
+		</div>
+		<div class="column two_thirds_size">
+			<h4 align="right"> Molecular Dynamics </h4>
+			<p>The MD group, headed by Prof. S.J. Marrink, is embedded in the GBB Institute and affiliated with the Zernike Institute, and participates in the Berendsen Center for Multiscale Modeling and Material Design. Using a computational approach, the group simulates the dynamics of (bio)molecular processes. The aim is to understand and predict macroscopic behaviour of complex systems on the basis of the effective interactions between atoms.</p>
+		</div>
+		<div class="clear extra_space"></div>
+		
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column two_thirds_size">
+			<h4> ENgineering and TEchnology institute Groningen (ENTEG)</h4>
+			<p>The research institute ENTEG is an engineering science and technology institute that has the capability to analyse, explore and design new technologies that are based on the integration of fundamental and engineering sciences. As such, the research in the institute focuses on current and future activities in a number of processing and production sectors such as processing, high tech and discrete production and interface industries. In addition, ENTEG has developed and contributed to several academic engineering education programmes of which the degrees provide an international starting qualification for graduated students for high quality jobs in industry, and research.
+</p>
+		</div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/3/3f/T--Groningen--enteg.png">
+		</div>
+		<div class="clear extra_space"></div>
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/3/3e/T--Groningen--guf.png">
+		</div>
+		<div class="column two_thirds_size">
+			<h4 align="right"> GUF </h4>
+			<p>The Groningen University Fund (“GUF”) was founded on March 4, 1893 by the professors of the Groningen University. The aim of the GUF is to promote in the widest sense the study at the Groningen University.
+As means to archive this aim the Fund sustains among others the following activities:
+subsidizing study-related travel abroad by students
+subsidizing student excursions (accompanied by staff members)
+subsidizing scientific, cultural or sports activities by students within the framework of a student organizatio
+subsidizing the organisation in Groningen or the northern Netherlands of international scientific conferences, symposia or workshops by scientists of the Groningen University
+financially facilitating seminars or lectures by scientists from abroad
+facilitate the establishment of specialized expert chairs (“bijzondere leerstoelen”) at the Groningen University
+
+  </p>
+		</div>
+		<div class="clear extra_space"></div>
+		
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column two_thirds_size">
+			<h4> Stratingh Institute</h4>
+			<p>The Stratingh Institute for Chemistry is a research institute at the Faculty of Science and Engineering of the University of Groningen.
+The mission of the Stratingh Institute for Chemistry is to perform excellent research and teaching in molecular and supramolecular chemistry. Core activities in the chemical sciences such as bioorganic chemistry, organic chemistry, molecular inorganic chemistry and molecular materials chemistry are embedded in the institute. The research programme is focussed on synthesis, catalysis, functional materials, bio-organic chemistry/chemical biology and systems chemistry/complex molecular systems.</p>
+		</div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/a/a7/T--Groningen--stratingh.png">
+		</div>
+		<div class="clear extra_space"></div>		
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/d/de/T--Groningen--bebasic.png">
+		</div>
+		<div class="column two_thirds_size">
+			<h4 align="right"> BeBasic </h4>
+			<p>The BE-Basic Foundation is an international public-private partnership that develops industrial biobased solutions to build a sustainable society.
+As we want to switch from fossil fuels to biomass in the near future new technologies and insights are required for all industries that provide us with food, chemicals, energy and materials.
+The BE-Basic Foundation initiates and stimulates collaborations between academia and industry, between scientists and entrepreneurs and between the Netherlands and abroad.
+
+  </p>
+		</div>
+		<div class="clear extra_space"></div>
+		
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column two_thirds_size">
+			<h4> Scholieren Academie </h4>
+			<p>The Pre University Academy organizes a large number of activities for high school students, to make the transition from high school to university a little easier. Our webclasses offer prospective students an opportunity to try out almost all the university's bachelors online. For talented high school students the Pre University Academy organizes the <a href="http://www.rug.nl/education/scholierenacademie/scholieren/juniorhc/">Junior Honours College</a>. For younger children and elementary schools, we organize the Children's University. In addition, together with a number of partners we organise activities for teachers and student counselors, in order to help them provide better scientific education.
+</p>
+		</div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/c/c8/T--Groningen--education.png">
+
+</div>
+		<div class="clear extra_space"></div>
+		
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/2/28/T--Groningen--troyka.png">
+		</div>
+		<div class="column two_thirds_size">
+			<h4 align="right"> Troyka Innovation </h4>
+			<p>Troyka Innovation is a consultancy company in The Netherlands. We make companies and people more innovative.
+
+  </p>
+		</div>
+		<div class="clear extra_space"></div>
+		
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column two_thirds_size">
+			<h4> ScienceLinx </h4>
+			<p>Science Linx is the ‘science center’ of the University of Groningen. It is the ‘red carpet’ of the faculty of Science & Engineering for high-school students. Science LinX shows that research is people work in an interesting way: using games, visualizations, installations, workshops and debates on science and technologie. </p>
+		</div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/9/98/T--Groningen--sciencelinx.png">
+		</div>
+		<div class="clear extra_space"></div>
+		
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/f/f0/T--Groningen--qiagen.png">
+		</div>
+		<div class="column two_thirds_size">
+			<h4 align="right"> Qiagen </h4>
+			<p>As the innovative market and technology leader, QIAGEN creates Sample to Insight solutions that enable access to valuable molecular insights from any biological sample. Our mission is to make improvements in life possible by enabling our customers to achieve outstanding success and breakthroughs in life sciences, applied testing, pharma and molecular diagnostics.
+  </p>
+		</div>
+		<div class="clear extra_space"></div>
+		
+
+	    <div class="line_divider"></div> 
+		<div class="clear_extra_space"></div>
+		<div class="column two_thirds_size">
+			<h4> KIVI Engineering Society  </h4>
+			<p>With over 20,000 members, KIVI is the professional association of engineers in the Netherlands. All engineering disciplines are represented at KIVI. They organize activities such as lectures, debates, symposia, company visits and more. </p>
+		</div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/3/33/T--Groningen--kivi.png">
+	    </div>    
+	    <div class="clear extra_space"></div>
+	    
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/8/88/T--Groningen--snapgene.png">
+		</div>
+		<div class="column two_thirds_size">
+			<h4 align="right"> SnapGene </h4>
+			<p>SnapGene offers the fastest and easiest way to plan, visualize, and document DNA cloning and PCR. You can easily annotate features and design primers.</p>
+		</div>
+		<div class="clear extra_space"></div>
+		
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column two_thirds_size">
+			<h4> Eurofins</h4>
+			<p>Eurofins Scientific is an international life sciences company which provides a unique range of analytical testing services to clients across multiple industries.</p>
+		</div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/thumb/2/2d/T--Groningen--eurofins.png/800px-T--Groningen--eurofins.png">
+		</div>
+		<div class="clear extra_space"></div>
+
+
+		<div class="line_divider"></div>
+	    <div class="clear extra_space"></div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/9/9f/T--Groningen--chemport.png">
+		</div>
+		<div class="column two_thirds_size">
+		<h4 align="right"> Chemport  </h4>
+			<p>Chemport Europe is the incubator for green chemistry. It meets all the conditions that enable the sustainable chemistry of the future to develop and flourish. Chemport Europe offers a dynamic ecosystem for companies committed to a greener chemical sector.</p>
+		</div>
+		<div class="clear extra_space"></div>
+
+				<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column two_thirds_size">
+			<h4>Backer Foundation</h4>
+			<p>The Hilmar Johannes Backer Foundation aims to support Organic Chemistry at the University of Groningen. This aim is achieved through providing financial support to chemistry student excursions, the annual “work week” organised by research groups in the area of organic chemistry, the annual Backer Lecture, and two annual prizes; the Backer prize (together with the Royal Netherlands Chemistry Union, the KNCV, div. of Organic Chemistry) and the Strating prize (a prize awarded for the best written colloquium within the Stratingh Institute). In addition, individual support can be provided to students from Groningen who carry out internship as part of their Master degree in Chemistry.</p>
+		</div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/0/0a/T--Groningen--backer.png">
+		</div>
+		<div class="clear extra_space"></div>
+
+
+		<div class="line_divider"></div>
+	    <div class="clear extra_space"></div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/6/6c/T--Groningen--jena.png">
+		</div>
+		<div class="column two_thirds_size">
+		<h4 align="right">Jena Bioscience</h4>
+			<p>Established in 1998 by a team of scientists from the Max-Planck-Institute of Molecular Physiology (Dortmund), Jena Bioscience utilizes more than 25 years of academic know-how to develop innovative reagents for clients from both research and industry in 100+ countries. To date, Jena Bioscience still remains an owner-operated business.</p>
+		</div>
+		<div class="clear extra_space"></div>
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column two_thirds_size">
+			<h4>Netherlands National Institute for Public Health and the Environment (RIVM) </h4>
+			<p>The Netherlands National Institute for Public Health and the Environment, is a Dutch research institute that is an independent agency of the Dutch Ministry of Health, Welfare and Sport.</p>
+		</div>
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img src="http://2018.igem.org/wiki/images/a/a2/T--Groningen--RIVM.png">
+		</div>
+		<div class="clear extra_space"></div>
+
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+		<div class="column two_thirds_size">
+    
+		</div>
+		</div>
+
+</div>
+<div style="position:relative; height: 15px; ; z-index: 5; box-shadow: 0px 0px 8px 1px black; background-color: white"></div>
+
+<div align="center">
+	<img src="http://2018.igem.org/wiki/images/archive/1/16/20180627163245%21T--Groningen--GroupPhoto.jpg" width="100%" height="auto">
+
+</div>
+</html>

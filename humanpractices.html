@@ -1,6 +1,4 @@
-
 <html>
-
 <script>
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -53,32 +51,17 @@ function showPopup(popup_name) {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 </script>
+
 <style>
-.collapsible {
-    background-color: white;
-    color:  #484848;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
+
+.hpline {
+    border-left: 6px solid green;
+    height: 100%;
+    align-content: center;
 }
 
-.collapsible-header {
- background-color: #039435
-color: white;
-
-}
-
-.content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
-}
 </style>
+
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!--- THIS IS WHERE THE HTML BEGINS --->
@@ -91,14 +74,10 @@ color: white;
 	<script src="scrollreveal.js"> </script>
 	<link rel="stylesheet" type="text/css" href="groningen.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/css/materialize.min.css">
-
-
-  <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
-   <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/js/materialize.min.js"></script>
-
 </head>
+
+
+
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!--- Menu --->
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -115,12 +94,12 @@ color: white;
 </style>
 
 <div class="navbar-fixed">
-<!-- <nav class="row red"> -->
+<nav class="row blue">
 	<div id="primary_nav_wrap" style="z-index: 2000">
 		<ul>
 			<li class="mobicon"> <a href="javascript:void(0);" onclick="mobnavtoggle()">≡ Menu</a></li>
 			
-			<li><a href="http://2018.igem.org/Team:Groningen">Home</a></li>
+			<li><a href="http://2018.igem.org/Team:Groningen">Home</a> </li>
 			<li><a onclick="">Team</a>
 				<ul>
 					<li class="dir"><a href="http://2018.igem.org/Team:Groningen/Team">Team Members</a></li>
@@ -169,7 +148,7 @@ color: white;
 			<li><a>Sponsors</a></li>
 		</ul>
 	</div>
-<!-- </nav> -->
+</nav>
 <div>
 
 <!------------- toggle mobile menu ----------->
@@ -190,73 +169,61 @@ color: white;
 
 <!-- PAGE CONTENT -->
 
+<!-- PAGE CONTENT -->
 <div class="igem_2018_team_content" style="background-color: white">
 	<div class="igem_2018_team_column_wrapper">
+		<div class="clear extra_space"></div>
+		<div class="column" style="width: 100%;" align="center">
+			<h1 class="headline">Human Practices! </h1>
+		</div>
+
+		<div class="hpline"></div>
+
+		<!-- Story 1 -->
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/8/8d/T--Groningen--toiletpaper.png">
+		</div>
+	
+		<h4 class="fading_title"> Toilet Paper  </h4>
+			<p class="fading_text">The first step in our project.</p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
+
 		
-		<h1 class="headline">Notebook</h1>
+		<!-- Story 2 -->
+		<div class="column third_size">
+			<div class="clear extra_space"></div>
+			<img class="portrait_photo" src="http://2018.igem.org/wiki/images/8/8d/T--Groningen--toiletpaper.png">
+		</div>
+	
+		<h4 class="fading_title"> Toiletpaper  </h4>
+			<p class="fading_text">The second step in our project </p>
+		<div class="clear extra_space"></div>
+		<div class="line_divider"></div>
+		<div class="clear_extra_space"></div>
 
-<body> 
-  <ul class="collapsible popout">
-    <li>
-      <h4 class="collapsible-header">Week 24</h4>
-      <div class="collapsible-body">
-      	<ul class="collapsible" data-collapsible="expandable">
-      		<li><div class="collapsible-header"><h5>Monday June 11th</h5></div>
-      			<div class="collapsible-body"> thing we did</div></li>
-			<li><div class="collapsible-header"><h5>Tuesday June 12th</h5></div>
-      			<div class="collapsible-body"> thing we did</div></li>
-      			<li><div class="collapsible-header"><h5>Wednesday June 13th</h5></div>
-      			<div class="collapsible-body"> thing we did</div></li>
-			<li><div class="collapsible-header"><h5>Thursday June 14th</h5></div>
-      			<div class="collapsible-body"> thing we did</div></li>
-      			<li><div class="collapsible-header"><h5>Friday June 15th</h5></div>
-      			<div class="collapsible-body"> thing we did</div></li>
-      	</ul>
-      	</div>
-    </li>
-    <li>
-      <h4 class="collapsible-header">Week 25</h4>
-      <div class="collapsible-body">
-      	<ul class="collapsible" data-collapsible="expandable">
-      		<li><div class="collapsible-header"><h5>Monday June 11th</h5></div>
-      			<div class="collapsible-body"> thing we did</div></li>
-			<li><div class="collapsible-header"><h5>Tuesday June 12th</h5></div>
-      			<div class="collapsible-body"> thing we did</div></li>
-      			<li><div class="collapsible-header"><h5>Wednesday June 13th</h5></div>
-      			<div class="collapsible-body"> thing we did</div></li>
-			<li><div class="collapsible-header"><h5>Thursday June 14th</h5></div>
-      			<div class="collapsible-body"> thing we did</div></li>
-      			<li><div class="collapsible-header"><h5>Friday June 15th</h5></div>
-      			<div class="collapsible-body"> thing we did</div></li>
-      	</ul>
-      </div>
-    </li>
-    <li>
-      <h4 class="collapsible-header">Week 26</h4>
-      <div class="collapsible-body">
-      	<ul class="collapsible" data-collapsible="expandable">
-      		<li><div class="collapsible-header"><h5>Monday June 11th</h5></div>
-      			<div class="collapsible-body"> thing we did</div></li>
-			<li><div class="collapsible-header"><h5>Tuesday June 12th</h5></div>
-      			<div class="collapsible-body"> thing we did</div></li>
-      			<li><div class="collapsible-header"><h5>Wednesday June 13th</h5></div>
-      			<div class="collapsible-body"> thing we did</div></li>
-			<li><div class="collapsible-header"><h5>Thursday June 14th</h5></div>
-      			<div class="collapsible-body"> thing we did</div></li>
-      			<li><div class="collapsible-header"><h5>Friday June 15th</h5></div>
-      			<div class="collapsible-body"> thing we did</div></li>
-      	</ul>
-      </div>
-    </li>
-  </ul>
 
-</div>
+
+
+	</div>
 </div>
 
 <script>
-  $(document).ready(function(){
-    $('.collapsible').collapsible();
-  });
+	ScrollReveal().reveal('.fading_text', {duration: 2000});
+	ScrollReveal().reveal('.portrait_photo', {duration: 1000});
+	ScrollReveal().reveal('.h4', {duration: 2000});
 </script>
-</body>
+
+
+
+<div style="position:relative; height: 15px; ; z-index: 5; box-shadow: 0px 0px 8px 1px black; background-color: white"></div>
+
+
+<div align="center">
+	<img src="http://2018.igem.org/wiki/images/1/16/T--Groningen--GroupPhoto.jpg" width="100%" height="auto">
+
+</div>
 </html>
+

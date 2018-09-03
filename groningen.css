@@ -199,7 +199,7 @@ body {background-color:white; margin: 0px}
 /* styling for the titles h1, h2*/
 .igem_2018_team_content .igem_2018_team_column_wrapper h1, .igem_2018_team_content .igem_2018_team_column_wrapper h2 {
 	border-bottom:0px; 
-	color: #039435;
+	color: #6cab1e;
 	font-family: Raleway, "Noto Sans", Helvetica, "Arial Black", Gadget, sans-serif;
 }
 
@@ -209,7 +209,7 @@ body {background-color:white; margin: 0px}
 .igem_2018_team_content .igem_2018_team_column_wrapper h5, 
 .igem_2018_team_content .igem_2018_team_column_wrapper h6 { 
 	border-bottom:0px; 
-	color: #039435;  
+	color: #83CF38;  
 	font-family: Raleway, "Noto Sans", Helvetica, "Arial Black", Gadget, sans-serif;
 	padding: 5px 0px;
 }
@@ -467,7 +467,7 @@ body {background-color:white; margin: 0px}
 	list-style:none;
 	position:relative;
 	float:left;
-	margin:0;
+	margin: auto;
 	padding:0 0 0 20%;
 }
 #primary_nav_wrap ul a
@@ -593,3 +593,4 @@ body {background-color:white; margin: 0px}
 
 
 /*************************************************/
+
