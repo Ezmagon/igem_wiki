@@ -1,0 +1,468 @@
+
+<html>
+
+<script>
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  $(document).ready(function() {
+
+    $("#HQ_page").attr('id','');
+    
+
+    //highlight current page on the menu
+    highlight_current_page_menu();
+      
+    //accessing submenus
+    $(".menu_item").click(function(){
+      $(".submenu_control_icon", this).toggleClass("open");
+      $(this).next(".submenu").fadeToggle(400);
+    });
+    
+    //mobile menu access 
+    $(".igem_2018_team_mobile_bar").click(function(){
+      $(this).next().toggleClass("displaying_menu");
+    });
+    
+  });
+
+
+    function highlight_current_page_menu() {
+      
+      var page_url="http://2018.igem.org/";
+      page_url = page_url + wgPageName;
+      $("a[href$='"+ page_url +"']").children().addClass("current_page");
+      
+      //if the page is in a submenu, open the submenu and make the appropiate changes
+      if( $( ".current_page" ).hasClass( "submenu_item" )){
+        
+        $(".current_page").parent().parent().fadeToggle(400);
+        $(".current_page").parent().parent().prev().addClass("current_page");
+        $(".menu_item.current_page > .submenu_control_icon").toggleClass("open");
+        
+      }
+    }
+
+
+/*********************** Own Script: ****************/
+
+function showPopup(popup_name) {
+    var popup = document.getElementById(popup_name);
+    popup.classList.toggle("show");
+}
+    
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+</script>
+<style>
+.collapsible {
+    background-color: white;
+    color: #039435;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+.body {
+    position: relative;
+}
+.active, .collapsible:hover {
+    background-color: white;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline {
+    position: relative;
+    top: 10%;
+    left: 5%;
+    width: .13em;
+    height: 70vh;
+    background-color: #039435;
+    border-radius: 20px;
+}
+
+
+/* -------------------------------------
+ * timeline
+ * ------------------------------------- */
+
+.date {
+      margin-top: -10px
+    top: 50%;
+    left: -158px;
+    text-align: center;
+    top: -55px;
+    left: 0;
+    right: 0;
+  font-size: 0.95em;
+  line-height: 20px;
+  position: absolute;
+}
+.circle {
+    margin-top: -10px;
+    top: 50%;
+    left: -44px;
+    margin: 0 auto;
+    top: -14px;
+    left: 0;
+    right: 0;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border: 5px solid: white;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+}
+.content {
+    max-height: 20px;
+    padding: 50px 20px 0;
+    border-color: transparent;
+    width: 200px;
+    max-height: 0;
+    margin-top: 40px;
+    vertical-align: top;
+    padding: 50px 15px 15px;
+    transition: width 0.4s linear, max-height 0.4s linear;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 0.5em;
+  position: relative;
+}
+
+    .circle {
+      background: red;
+    }
+
+</style>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- THIS IS WHERE THE HTML BEGINS --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<head> 
+
+  <!-- This tells the browser that your page is responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <script src="scrollreveal.js"> </script>
+  <link rel="stylesheet" type="text/css" href="groningen.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+   <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/js/materialize.min.js"></script>
+
+</head>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Menu --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Content of the page  --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<style>
+.portrait_photo {
+  border-radius: 10px
+}
+
+</style>
+
+<div class="navbar-fixed">
+<!--nav class="row blue"-->
+  <div id="primary_nav_wrap" style="z-index: 2000">
+    <ul>
+      <li class="mobicon"> <a href="javascript:void(0);" onclick="mobnavtoggle()">≡ Menu</a></li>
+      
+      <li><a href="http://2018.igem.org/Team:Groningen">Home</a></li>
+      <li><a onclick="">Team</a>
+        <ul>
+          <li class="dir"><a href="http://2018.igem.org/Team:Groningen/Team">Team Members</a></li>
+          <li class="dir"><a href="">Collaborations</a></li>
+        </ul>
+      </li>
+      <li><a onclick="">Project</a>
+        <ul>          
+          <li><a href="http://2018.igem.org/Team:Groningen/InterLab">InterLab</a></li>
+          <li class="dir">Description</li>
+          <li class="dir">Design</li>
+          <li class="dir">Experiments</li>
+          <li class="dir">Notebook</li>
+          <li class="dir">Model</li>
+          <li class="dir">Results</li>
+          <li class="dir">Demonstrate</li>
+          <li class="dir">Improve</li>
+          <li class="dir">Attributions</li>
+        </ul>
+      </li>
+      <li><a onclick="">Human Practices</a>
+        <ul>
+          <li class="dir">Human Practices</li>
+          <li class="dir">Education & Engagement</li>
+        </ul>
+      </li>
+      <li><a onclick="">Parts</a>
+        <ul>
+          <li class="dir">Parts Overview</li>
+          <li class="dir">Basic Parts</li>
+          <li class="dir">Composite Parts</li>
+          <li class="dir">Part Collection</li>
+        </ul>
+      </li>
+      <li><a onclick="">Awards</a>
+        <ul>
+          <li class="dir">Applied Design</li>
+          <li class="dir">Entrepeneurship</li>
+          <li class="dir">Hardware</li>
+          <li class="dir">Measurement</li>
+          <li class="dir">Model</li>
+          <li class="dir">Plant</li>
+          <li class="dir">Software</li>
+        </ul>
+      </li>
+      <li><a>Sponsors</a></li>
+    </ul>
+  </div>
+<!--/nav-->
+<div>
+
+<!------------- toggle mobile menu ----------->
+<script>
+  function mobnavtoggle() {
+    document.getElementByID("primary_nav_wrap").classList.toggle("mobnav");
+  }
+</script>
+
+<style>
+.mobicon {display:none;}
+</style>
+
+<div box-shadow="0 0 px 8px #10722B inset" visibility="hidden">
+  <img src="http://2018.igem.org/wiki/images/5/5c/T--Groningen--WikiBackgroundImage.png" width="100%" height="auto">
+</div>
+<div style="position:relative; height: 15px; ; z-index: 5; box-shadow: 0px 0px 8px 1px black; background-color: white"></div>
+
+<!-- PAGE CONTENT -->
+
+ <div class='col m2'>
+             <div class="timeline">
+               <div style="z-index: 1; background-color: white; width: 10px; height: 30px;"></div>
+                <div id="round22">
+                    <a href="#week22-scroll">
+                        <div></div>
+                        <p>June</p>
+                    </a>
+                </div>
+                <div id="round23">
+                    <a href="#week23-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>
+                <div id="round24">
+                    <a href="#week24-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>
+                <div id="round25">
+                    <a href="#week25-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>
+                <div id="round26">
+                    <a href="#week26-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>
+                <div id="round27">
+                    <a href="#week27-scroll">
+                        <div></div>
+                        <p>July</p>
+                    </a>
+                </div>
+                <div id="round28">
+                    <a href="#week28-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>
+                <div id="round29">
+                    <a href="#week29-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>
+                <div id="round30">
+                    <a href="#week30-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>
+                <div id="round31">
+                    <a href="#week31-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>
+                <div id="round32">
+                    <a href="#week32-scroll">
+                        <div></div>
+                        <p>August</p>
+                    </a>
+                </div>
+                <div id="round33">
+                    <a href="#week33-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>
+                <div id="round34">
+                    <a href="#week34-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>
+                <div id="round35">
+                    <a href="#week35-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>
+                <div id="round36">
+                    <a href="#week36-scroll">
+                        <div></div>
+                        <p>September</p>
+                    </a>
+                </div>
+                <div id="round37">
+                    <a href="#week37-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>
+                <div id="round38">
+                    <a href="#week38-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>
+                <div id="round39">
+                    <a href="#week39-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>
+                <div id="round40">
+                    <a href="#week40-scroll">
+                        <div></div>
+                        <p>October</p>
+                    </a>
+                </div>
+                <div id="round41">
+                    <a href="#week41-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>
+                <div id="round42">
+                    <a href="#week42-scroll">
+                        <div></div>
+                        <p></p>
+                    </a>
+                </div>              
+            </div>
+        </div>
+
+
+<div class="igem_2018_team_content" style="background-color: white">
+  <div class="igem_2018_team_column_wrapper">
+
+<body data-spy="scroll" data-target="#scrollspy"> 
+  <ul class="collapsible popout">
+    <li>
+      <div class="collapsible-header scrollspy" id="#week24-scroll"><h4>Week 24</h4></div>
+      <div class="collapsible-body"><p>What we did</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header scrollspy" id="week25-scroll"><h4>Week 25</h4></div>
+      <div class="collapsible-body">
+        <h2>Specific Day</h2>
+        <p><b>Name who did the thing</b></p>
+        <p>We did something else</p></div>
+    </li>
+    <li>
+      <h4 class="collapsible-header">Week 26</h4>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+    <li>
+      <h4 class="collapsible-header">Week 27</h4>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+    <li>
+      <h4 class="collapsible-header">Week 28</h4>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+    <li>
+      <h4 class="collapsible-header">Week 29</h4>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+    <li>
+      <h4 class="collapsible-header">Week 30</h4>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+    <li>
+      <h4 class="collapsible-header">Week 31</h4>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+    <li>
+      <h4 class="collapsible-header">Week 32</h4>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header scrollspy" id="#week33-scroll"><h4>Week 33</h4></div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+    <li>
+      <h4 class="collapsible-header">Week 34</h4>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+  </ul>
+
+</div>
+</div>
+
+
+<script>
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+</script>
+</body>
+</html>
